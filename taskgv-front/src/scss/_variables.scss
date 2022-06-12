@@ -1,0 +1,81 @@
+
+//* ****************  SNCF official colors charts: *****************
+
+//* SNCF-PANTONE-COLORS
+
+$violet: #6E1E78;
+$prune: #A1006B;
+$framboise: #CD0037;
+$orange: #E05206;
+$jaune-safran: #FFB612;
+$vert-anis: #D2E100;
+$vert-pomme: #82BE00;
+$bleu-canard: #009AA6;
+$bleu-pimaire: #0088CE;
+$bleu-signaletique: #00112B;
+$rouge-assitance: #D52B1E;
+
+//* SNCF-PANTONE-GREYS
+
+//* cold
+$cool-gray-1: #F2F2F2;
+$cool-gray-3: #d7d7d7;
+$cool-gray-5: #b9b9b9;
+$cool-gray-7: #a0a0a0;
+$cool-gray-9: #747678;
+$cool-gray11: #4d4f53;
+//* warm
+$warm-gray-1: #E0DED8;
+$warm-gray-3: #C3BEB4;
+$warm-gray-5: #AFA59B;
+$warm-gray-7: #988F86;
+$warm-gray-9: #82786F;
+$warm-gray11: #675C53;
+//* std
+$carbone: #333333;
+$blanc: #FFFFFF;
+
+//* *************** SNCF WCS colors charts: *****************
+
+--wcs-white: #ffffff;
+--wcs-light: #f2f2f2;
+--wcs-gray-light: #4d4f53;
+--wcs-gray: #333;
+--wcs-gray-dark: #343a40;
+--wcs-gray-darker: #212529;
+--wcs-black: black;
+
+--wcs-text-light: #d7d7d7;
+--wcs-text-disabled: #b9b9b9;
+--wcs-text-medium: #747678;
+
+--wcs-blue: #0088CE;
+--wcs-purple: #6e1e78;
+--wcs-pink: #a1006b;
+--wcs-red: #cd0037;
+--wcs-orange: #e05206;
+--wcs-yellow: #ffb612;
+--wcs-green: #82be00;
+--wcs-teal: #d2e100;
+--wcs-cyan: #009aa6;
+
+--wcs-primary: var(--wcs-blue);
+// Default base and contrast color
+--wcs-base: var(--wcs-primary);
+--wcs-contrast: var(--wcs-white);
+
+//* ****************** FONTS *******************
+
+--wcs-font-sans-serif: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+--wcs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+--wcs-font-weight-form-value: 500;
+
+//* ************ Other properties **************
+--wcs-border-radius: 8px;
+--wcs-padding: 16px;
+--wcs-base-margin: 8px;
+--wcs-text-padding: 8px;
+--wcs-com-content-max-width: 1024px;
+
+// TODO: Should be moved in wcs-tabs
+--wcs-tabs-headers-border-bottom: 1px solid #ebebeb;

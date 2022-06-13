@@ -1,0 +1,9 @@
+// CSS DRY (min 2elements)
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//@extend %flex-center;

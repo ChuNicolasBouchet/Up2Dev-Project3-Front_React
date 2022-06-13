@@ -1,0 +1,20 @@
+//* ******* reusable code with parameters *******
+
+@mixin absolute-el ($top, $right, $bottom, $left, $x, $y) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    transform: translate($x,$y);
+}
+// to use 
+// @include absolute-el(50%,0,0,50%,-50%,-50%);
+
+
+// psoeudo _el
+@mixin psoeudo-el ($display: block, $pos: $absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}

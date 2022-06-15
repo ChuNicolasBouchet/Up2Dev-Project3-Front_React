@@ -1,14 +1,18 @@
 //* T@skGV Sass styleSheet
 
+@import './ripple';
 @import './breakpoints';
 @import './elevation';
 @import './mixins';
 @import './overlay';
 @import './placeholders';
-@import './ripple';
 @import './tooltips';
 @import './variables';
+@import './components/bars/header';
+@import './components/bars/navbar';
+@import './components/bars/userbar';
 
 body {
     height: 100vh;
+    margin: 0;
 }

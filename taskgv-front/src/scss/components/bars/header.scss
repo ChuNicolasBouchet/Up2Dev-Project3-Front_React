@@ -1,0 +1,33 @@
+
+
+// .header__box {
+//     display: flex;
+//     justify-content: space-between;
+//     flex-direction: row;
+//     align-items: center;
+//     padding-left: 2em;
+//     padding-right: 2em;
+//     margin-top: 1em;
+// }
+
+// .Header__box__tools {
+//     display: flex;
+//     width:auto;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     align-items: center;
+//     margin-right: 2em;
+// }
+
+// .header__logo {
+//     min-width: 30em;
+//     max-width: 35em;
+//     fill: rgb(0, 136, 206);
+//     margin-right: 2em;
+// }
+
+.header__box {
+    height: 48px;
+    background-color: $carbone;
+    color: $blanc;
+}

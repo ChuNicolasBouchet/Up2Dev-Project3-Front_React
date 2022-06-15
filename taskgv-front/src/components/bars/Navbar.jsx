@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ToolBarItems from './ToolbarData';
-import '../../styles/Navbar.css';
+// import '../../styles/components/bars/Navbar.css';
 
 function Navbar() {
 

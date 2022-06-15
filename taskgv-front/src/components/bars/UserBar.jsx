@@ -1,10 +1,10 @@
 import React from 'react'
-import '../../styles/UserBar.css'
+// import '../../styles/Userbar.css'
 
-function UserBar() {
+function Userbar() {
   return (
-    <div className='userbar__box'>UserBar</div>
+    <div className='userbar__box'>Userbar</div>
   )
 }
 
-export default UserBar
+export default Userbar

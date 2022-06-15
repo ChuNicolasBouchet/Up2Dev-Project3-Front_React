@@ -27,7 +27,49 @@
 // }
 
 .header__box {
+    display: flex;
     height: 48px;
     background-color: $carbone;
     color: $blanc;
+    width: 100vw;
+    align-items: center;
 }
+
+.header__logo_sncf {
+    max-height: 100%;
+}
+
+img {
+    height: 40px;
+    padding: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.placeholder__burger {
+    height: 48px;
+    width: 48px;
+}
+
+.header__site-name {
+    display: inline-block;
+    font-family: $wcs-font-sans-serif;
+    align-items: center;
+    justify-content :center;
+    margin-left: 10px;
+    margin-right:10px;
+}
+
+.header__wrapper__growing {
+    display: inline-block;
+    font-family: $wcs-font-sans-serif;
+    min-width: 80px;
+    flex-grow: 3;
+}
+
+.header__welcome-user {
+    display: inline-block;
+    font-family: $wcs-font-sans-serif;
+    margin-right: 20px;
+}
+

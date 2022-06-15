@@ -14,7 +14,7 @@ function Header() {
       </div>
       <div className='header__site-name'>T@skGV</div>
       <div className='header__wrapper__growing'></div>
-      <div className='header__welcome-user'>Bienvenue Marcel</div>
+      <div className='header__welcome-user'>Bienvenue</div>
     </div>
   )
 }

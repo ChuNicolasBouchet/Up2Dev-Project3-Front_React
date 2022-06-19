@@ -15,9 +15,13 @@ function Header() {
       </div>
       <div className='header__site-name'>T@skGV</div>
       <div className='header__wrapper__growing'></div>
-      <div className='header__welcome-user'>Bienvenue {auth.userInfos.userEmail}</div>
+      <div className='header__welcome-user'>
+        { auth.userInfos ? <div>Bienvenue {auth.userInfos.userEmail}</div> : <div>Connectez-vous</div> }
+      </div>
     </div>
   )
 }
 
 export default Header;
+// read a context value, if the context value is null, then the component is not rendered
+

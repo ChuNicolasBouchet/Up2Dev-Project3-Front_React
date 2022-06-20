@@ -1,30 +1,16 @@
 import React from 'react';
-import { useNavigate, Link } from "react-router-dom";
-import useLogout from "../hooks/useLogout";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    const navigate = useNavigate();
-    const logout = useLogout()
-
-    const signOut = async () => {
-        await logout();
-        navigate('/linkpage');
-    }
-
 
     return (
         <section>
             <h1>Acceuil </h1>
             <br />
             <p>Vous êtes connecté</p>
-
-            <Link to="/admin">Go to the Admin page</Link>
-
-            <div className="flexGrow">
-                <button onClick={signOut}>Sign Out</button>
-            </div>
-
-
+            <Link to="/usersaxiosjwt">users list with axios with jwt from context</Link>
+            <div>-</div>
+            <Link to="/usersaxioscookie">users list with axios and cookie auth</Link>
         </section>
     )
 }

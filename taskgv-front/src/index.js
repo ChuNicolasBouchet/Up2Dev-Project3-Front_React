@@ -4,18 +4,17 @@ import './scss/index.scss';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider';
-import { CookiesProvider } from "react-cookie"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <CookiesProvider>
+
           <Routes>
             <Route path="/*" element={<App />} />
           </Routes>
-        </CookiesProvider>
+
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

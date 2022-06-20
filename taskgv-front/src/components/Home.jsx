@@ -1,17 +1,21 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Logout from './Logout'
 
 const Home = () => {
 
     return (
-        <section>
+        <div>
             <h1>Acceuil </h1>
             <br />
-            <p>Vous êtes connecté</p>
+            <p>home</p>
             <Link to="/usersaxiosjwt">users list with axios with jwt from context</Link>
             <div>-</div>
             <Link to="/usersaxioscookie">users list with axios and cookie auth</Link>
-        </section>
+            <div>-</div>
+            <Logout />
+
+        </div>
     )
 }
 

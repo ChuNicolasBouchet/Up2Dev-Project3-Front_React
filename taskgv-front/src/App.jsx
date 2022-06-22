@@ -21,7 +21,7 @@ function App() {
         <Routes>
         {/* public routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/workspace" element={<Workspace />} />
+        <Route path="workspace" element={<Workspace />} />
         <Route path="login" element={<Login />} />
         <Route path="unauthorized" element={<Unauthorized />} />
         { /* /!\ TODO Register */}

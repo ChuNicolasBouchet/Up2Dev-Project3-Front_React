@@ -12,7 +12,7 @@ function Navbar() {
                         <li key={item.title} className='navbar__li'>
                             <Link
                                 className={item.classname} 
-                                activeClassName={item.activeclassname} 
+                                activeclassname={item.activeclassname} 
                                 to={item.path}>
                                 <i>{item.icon}</i>
                                 <p>{item.title}</p>

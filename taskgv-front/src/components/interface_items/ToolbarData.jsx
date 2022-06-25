@@ -6,7 +6,7 @@ import { ReactComponent as UserIco } from '../../svg/user.svg';
 import { ReactComponent as HelpIco } from '../../svg/help.svg';
 import { ReactComponent as NewTaskIco } from '../../svg/newTask.svg';
 
-const ToolbarItems = [
+const ToolBarItems = [
     {
         id: 1,
         title: 'Acceuil',
@@ -56,4 +56,4 @@ const ToolbarItems = [
         activeclassname: 'toolbar__item__active'
     }
 ];
-export default ToolbarItems;
+export default ToolBarItems;

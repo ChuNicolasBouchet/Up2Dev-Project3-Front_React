@@ -1,11 +1,13 @@
 import React from 'react'
-import Navbar from './Navbar'
+import ToolBar from './ToolBar'
+import SideBar from './SideBar'
 
 function Workspace() {
     return (
     <div className='workspace'>
         <div className='workspace__header__wrapper'>
-            <Navbar />
+            <ToolBar />
+            <SideBar />
         </div>
     <p>Workspace</p>
     <div>

@@ -8,11 +8,18 @@
 @import './placeholders';
 @import './tooltips';
 @import './variables';
-@import './components/bars/header';
-@import './components/bars/navbar';
-@import './components/bars/userbar';
+
+@import './App';
+@import './components/Header';
+@import './components/Login';
+@import './components/Navbar';
+@import './components/Home';
+@import './components/Workspace';
+// @import './components/LoginBg.scss';
+@import './pages/signin.scss';
+
 
 body {
-    height: 100vh;
     margin: 0;
+    font-family: $wcs-font-sans-serif;
 }

@@ -7,7 +7,7 @@ function Workspace() {
     return (
     <div className='workspace'>
         <div className='workspace__header__wrapper'>
-        <Bar barItems={sideBarItems} barClass='sidebar' />
+            <Bar barItems={sideBarItems} barClass='sidebar' />
             <Bar barItems={toolBarItems} barClass='toolbar' />
         </div>
     <p>Workspace</p>

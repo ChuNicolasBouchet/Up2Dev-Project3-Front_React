@@ -5,7 +5,14 @@
     border-radius: 0.8em;
     justify-content: flex-end;
     align-items: center;
-    margin: 1.5em .7em .6em .8em;
+    margin: 1.5em .7em .6em 0em;
+    @include for-tablet-landscape-down {
+        margin: .7em .7em .6em 0em;
+        flex-grow: 100;
+    }
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .toolbar__box__ul {

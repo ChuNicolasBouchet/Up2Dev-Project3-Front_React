@@ -6,6 +6,13 @@
     border-radius: 0.8em;
     align-items: flex-start;
     margin: 0em .7em .6em .8em;
+    @include for-tablet-landscape-down {
+        width: 3.5rem;
+        margin: .7em .7em .6em .8em;
+    }
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .sidebar__box__ul {
@@ -34,8 +41,10 @@
     margin-right: 0.5em;
 }
 
-i {
-    height: 1.8em;
-    width: 2em;
+.sidebar__li p {
+    display: block;
+    @include for-tablet-landscape-down {
+        display: none;
+    }
 }
 

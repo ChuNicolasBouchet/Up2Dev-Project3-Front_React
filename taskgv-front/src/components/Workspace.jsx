@@ -7,7 +7,7 @@ import { ReactComponent as LogoTaskgv } from '../svg/TaskGV_up2.svg'
 function Workspace() {
     return (
     <div className='workspace'>
-        <div className='workspace__side__right__wrapper'>
+        <div className='workspace__side__left__wrapper'>
             <LogoTaskgv className='workspace__logo' />
             <Bar barItems={sideBarItems} barClass='sidebar' />
         </div>

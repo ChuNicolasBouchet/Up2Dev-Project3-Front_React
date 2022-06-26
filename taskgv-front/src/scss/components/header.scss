@@ -3,8 +3,8 @@
     height: 48px;
     background-color: $carbone;
     color: $blanc;
-    width: 100vw;
     align-items: center;
+    width: 100%;
 }
 
 .header__logo__wrapper {
@@ -16,6 +16,9 @@
     padding: 4px;
     margin-left: 10px;
     margin-right: 10px;
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .placeholder__burger {
@@ -26,23 +29,31 @@
 .header__site-name {
     align-items: center;
     justify-content :center;
-    margin-left: 20px;
-    margin-right:20px;
+    // margin-left: 20px;
+    // margin-right:20px;
+    @include for-phone-only {
+        margin-right:8px;
+    }
 }
 
 .header__wrapper__growing {
     min-width: 80px;
     flex-grow: 3;
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .header__logo__taskgv {
+    display: none;
     fill: white;
     max-width: 150px;
     min-width: 150px;
-    align-items: center;
-    justify-content :center;
-    margin-left: 20px;
-    margin-right:20px;
+    // margin-left: 10px;
+    // margin-right:10px;
+    @include for-tablet-landscape-down {
+        display: block;
+    }
 }
 
 .header__welcome-user {
@@ -55,6 +66,7 @@
     text-decoration: none;
     color: $blanc;
 }
+
 
 // .header__user-connect {
 //     display: flex;

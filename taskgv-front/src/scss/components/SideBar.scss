@@ -1,0 +1,42 @@
+.sidebar__box {
+    display: flex;
+    height: 30em;
+    min-width: 12em;
+    background-color: lightgray;
+    border-radius: 0.8em;
+    align-items: flex-start;
+    margin: 1em;
+}
+
+.sidebar__box__ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding-inline-start: 1.5em;
+    padding-top: 0.5em;
+}
+
+.sidebar__element {
+    display: flex;
+    color: rgb(54, 54, 54);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 2em;
+    align-items: center;
+    text-decoration: none;
+    padding-top: 1em;
+}
+
+.sidebar__li {
+    padding: 0.5em;
+}
+.sidebar__li i {
+    height: 1.8em;
+    margin-right: 0.5em;
+}
+
+i {
+    height: 1.8em;
+    width: 2em;
+}
+

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthProvider";
+import {ReactComponent as LogoutIco} from '../svg/logout-slim.svg'
 import axios from "../api/axios";
 
 function Logout() {
@@ -15,7 +16,9 @@ function Logout() {
         navigate('/') //* add the landing url after logout
     }
   return (
-    <button onClick={logout}>Déconnexion</button>
+    <button onClick={logout} className='logout-button'>
+      <LogoutIco className='logout-ico' />
+    </button>
   )
 }
 

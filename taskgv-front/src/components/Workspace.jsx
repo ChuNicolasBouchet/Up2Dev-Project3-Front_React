@@ -2,18 +2,23 @@ import React from 'react'
 import toolBarItems from './interface_items/ToolBarData'
 import sideBarItems from './interface_items/SideBarData'
 import Bar from './Bar'
+import { ReactComponent as LogoTaskgv } from '../svg/TaskGV_up2.svg'
 
 function Workspace() {
     return (
     <div className='workspace'>
-        <div className='workspace__header__wrapper'>
+        <div className='workspace__side__right__wrapper'>
+            <LogoTaskgv className='workspace__logo' />
             <Bar barItems={sideBarItems} barClass='sidebar' />
-            <Bar barItems={toolBarItems} barClass='toolbar' />
         </div>
-    <p>Workspace</p>
-    <div>
-        -
-    </div>
+        <div className='workspace__body'>
+            <div className="workspace__head">    
+                <Bar barItems={toolBarItems} barClass='toolbar' className='toolbar__component'/>
+            </div>
+            <div className="workspace__main">
+                <div className="component__box"></div>
+            </div>
+        </div>
     </div>
     )
 }

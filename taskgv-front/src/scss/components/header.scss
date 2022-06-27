@@ -37,11 +37,11 @@
 }
 
 .header__wrapper__growing {
-    min-width: 80px;
+    min-width: .7em;
     flex-grow: 3;
-    // @include for-phone-only {
-    //     display: none;
-    // }
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .header__logo__taskgv {

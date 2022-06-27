@@ -14,7 +14,7 @@ function Header() {
   return (
     <div className='header__box'>
       {/* <div className='placeholder__burger'></div> */}
-      <PopMenu menuItems={toolBarItems} menuClass='burger' />
+      <PopMenu menuItems={toolBarItems} menuClass='burger' className='burger-component' />
       <div className='header__logo__wrapper'>
       <img className='header__logo__sncf' src={SncfLogo} alt='sncf logo' />
       </div>
@@ -29,5 +29,4 @@ function Header() {
 export default Header;
 
 // TODO add a link to the user card
-// TODO add a logout button
 // TODO add admin menu ?

@@ -39,9 +39,9 @@
 .header__wrapper__growing {
     min-width: 80px;
     flex-grow: 3;
-    @include for-phone-only {
-        display: none;
-    }
+    // @include for-phone-only {
+    //     display: none;
+    // }
 }
 
 .header__logo__taskgv {
@@ -65,6 +65,15 @@
     margin-right: 15px;
     text-decoration: none;
     color: $blanc;
+    margin-left: .7em;
+}
+
+.burger-component {
+    display: none;
+
+    // @include for-phone-only {
+    //     display: block;
+    // }
 }
 
 

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ToolBarItems from './interface_items/ToolbarData';
-// import '../../styles/components/bars/Navbar.css';
 
-function Navbar() {
-
+// eslint-disable-next-line react/prop-types
+function Bar(barProps) {
     return (
-            <nav className='navbar__box'>
-                <ul className='navbar__box__ul'>  
-                    {ToolBarItems.map(item => (
-                        <li key={item.title} className='navbar__li'>
+            <nav className={`${barProps.barClass}__box`}>
+                <ul className={`${barProps.barClass}__box__ul`}>  
+                    {barProps.barItems.map(item => (
+                        <li key={item.title} className={`${barProps.barClass}__li`}>
                             <Link
                                 className={item.classname} 
                                 activeclassname={item.activeclassname} 
@@ -24,5 +22,5 @@ function Navbar() {
     )
 }
 
-export default Navbar;
+export default Bar;
 

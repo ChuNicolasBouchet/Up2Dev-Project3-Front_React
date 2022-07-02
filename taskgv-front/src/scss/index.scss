@@ -12,10 +12,12 @@
 @import './App';
 @import './components/Header';
 @import './components/Login';
-@import './components/Navbar';
+@import './components/ToolBar';
+@import './components/SideBar';
 @import './components/Home';
 @import './components/Workspace';
-// @import './components/LoginBg.scss';
+@import './components/Logout';
+@import './components/Burger';
 @import './pages/signin.scss';
 
 

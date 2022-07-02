@@ -1,99 +1,111 @@
-import React, { useRef, useState, useEffect } from 'react';
-import useAuth from '../hooks/useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useRef, useState, useEffect } from "react";
+import useAuth from "../hooks/useAuth";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
 
-import axios from '../api/axios';
-const LOGIN_URL = '/auth/signin';
+import axios from "../api/axios";
+const LOGIN_URL = "/auth/signin";
 
 const Login = () => {
-    const { setAuth } = useAuth();
+	const { setAuth } = useAuth();
 
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
+	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || "/";
 
-    const userRef = useRef();
-    const errRef = useRef();
+	const userRef = useRef();
+	const errRef = useRef();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errMsg, setErrMsg] = useState('');
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [errMsg, setErrMsg] = useState("");
 
-    useEffect(() => {
-        userRef.current.focus();
-    }, [])
+	useEffect(() => {
+		userRef.current.focus();
+	}, []);
 
-    useEffect(() => {
-        setErrMsg('');
-    }, [email, password])
+	useEffect(() => {
+		setErrMsg("");
+	}, [email, password]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			const response = await axios.post(
+			LOGIN_URL,
+			JSON.stringify({ email, password }),
+			{
+				headers: { "Content-Type": "application/json" },
+				withCredentials: true,
+			}
+			);
+			setAuth(response.data);
+			setEmail("");
+			setPassword("");
+			navigate(from, { replace: true });
+			} catch (err) {
+				if (!err?.response) {
+					setErrMsg("No Server Response");
+				} else if (err.response?.status === 400) {
+					setErrMsg("Missing Username or Password");
+				} else if (err.response?.status === 401) {
+					setErrMsg("Unauthorized");
+				} else {
+					setErrMsg("Login Failed");
+				}
+			errRef.current.focus();
+		}
+	};
 
-        try {
-            const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ email, password }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            //console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response));
-            //const accessToken = response?.data?.token;
-            setAuth( response.data );
-            setEmail('');
-            setPassword('');
-            navigate(from, { replace: true });
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 400) {
-                setErrMsg('Missing Username or Password');
-            } else if (err.response?.status === 401) {
-                setErrMsg('Unauthorized');
-            } else {
-                setErrMsg('Login Failed');
-            }
-            errRef.current.focus();
-        }
-    }
+	return (
+		<div className="login_bg">
+			<div className="overflow-hiddebox">
+				<div className="login_circle_up_left" />
+			</div>
+			<LogoTaskgv className="taskgv_logo" />
+			<div className="cat-left" />
+			<div className="cat-middle" />
+			<div className="cat-right" />
+			<div className="login__wrapper">
+				<p	ref={errRef}
+					className={errMsg ? "errmsg" : "offscreen"}
+					aria-live="assertive">
+						{errMsg}
+				</p>
+				<form onSubmit={handleSubmit} className="login__form">
+					<div className="login__form__item">
+						<label htmlFor="username" className="login__form__label">Email: </label>
+						<input
+							type="text"
+							id="email"
+							ref={userRef}
+							autoComplete="off"
+							onChange={(e) => setEmail(e.target.value)}
+							value={email}
+							required
+						/>
+					</div>
+					<div className="login__form__item">
+						<label htmlFor="password" className="login__form__label">Password: </label>
+						<input
+							type="password"
+							id="password"
+							onChange={(e) => setPassword(e.target.value)}
+							value={password}
+							required
+						/>
+					</div>
+					<button className="login__form__button">Valider</button>
+					<p>
+						Nouvel utilisateur ?<br />
+						<span className="line">
+							<Link to="/register">Enregistrez-vous !</Link>
+						</span>
+					</p>
+				</form>
+			</div>
+		</div>
+	);
+};
 
-    return (
-        <div>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Email:</label>
-                <input
-                    type="text"
-                    id="email"
-                    ref={userRef}
-                    autoComplete="off"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    required
-                />
-
-                <label htmlFor="password">Password:</label>
-                <input
-                    type="password"
-                    id="password"
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                    required
-                />
-                <button>Sign In</button>
-            </form>
-            <p>
-                Nouvel utilisateur ?<br />
-                <span className="line">
-                    <Link to="/register">Enregistrez-vous !</Link>
-                </span>
-            </p>
-        </div>
-
-    )
-}
-
-export default Login
+export default Login;

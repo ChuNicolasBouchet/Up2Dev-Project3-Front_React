@@ -3,8 +3,8 @@
     height: 48px;
     background-color: $carbone;
     color: $blanc;
-    width: 100vw;
     align-items: center;
+    width: 100%;
 }
 
 .header__logo__wrapper {
@@ -16,6 +16,9 @@
     padding: 4px;
     margin-left: 10px;
     margin-right: 10px;
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .placeholder__burger {
@@ -26,28 +29,57 @@
 .header__site-name {
     align-items: center;
     justify-content :center;
-    margin-left: 20px;
-    margin-right:20px;
+    // margin-left: 20px;
+    // margin-right:20px;
+    @include for-phone-only {
+        margin-right:8px;
+    }
 }
 
 .header__wrapper__growing {
-    min-width: 80px;
+    min-width: .7em;
     flex-grow: 3;
-}
-
-.header__welcome-user {
-    font-size: 18px;
-    margin-right: 30px;
-    text-decoration: none;
-    color: $blanc;
+    @include for-phone-only {
+        display: none;
+    }
 }
 
 .header__logo__taskgv {
+    display: none;
     fill: white;
     max-width: 150px;
     min-width: 150px;
-    align-items: center;
-    justify-content :center;
-    margin-left: 20px;
-    margin-right:20px;
+    // margin-left: 10px;
+    // margin-right:10px;
+    @include for-tablet-landscape-down {
+        display: block;
+    }
 }
+
+.header__welcome-user {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 18px;
+    margin-right: 15px;
+    text-decoration: none;
+    color: $blanc;
+    margin-left: .7em;
+}
+
+.burger-component {
+    display: none;
+
+    // @include for-phone-only {
+    //     display: block;
+    // }
+}
+
+
+// .header__user-connect {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     flex-direction: row;
+// }

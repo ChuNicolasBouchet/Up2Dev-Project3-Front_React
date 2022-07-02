@@ -1,5 +1,4 @@
 // Based on this article https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
-// TODO: Verify this is working with the resolution we have at SNCF
 
 @mixin for-phone-only {
     @media (max-width: 599px) { @content; }
@@ -16,7 +15,7 @@
 }
 
 @mixin for-tablet-landscape-down {
-    @media (max-width: 1199px) { @content; }
+    @media (max-width: 1000px) { @content; }
 }
 
 @mixin for-desktop-up {

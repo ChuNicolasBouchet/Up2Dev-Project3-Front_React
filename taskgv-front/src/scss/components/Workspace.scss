@@ -1,9 +1,51 @@
 .workspace {
     display: flex;
+    width: 100vw;
 }
 
-.workspace__header__wrapper {
+.workspace__logo {
     display: flex;
-    width: 100vw;
+    fill: blue;
+    width: 12em;
+    height: 3em;
+    padding:.8em;
+    @include for-tablet-landscape-down {
+        display: none;
+    }
+}
+
+.workspace__side__left__wrapper {
+    display: flex;
+    width: 13.5em;
+    flex-direction: column;
+    align-items: flex-start;
+    // margin: .7em .7em .6em .8em;
+    @include for-tablet-landscape-down {
+        width: 5rem;
+    }
+}
+.workspace__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 100; 
+}
+.workspace__head {
+    display: flex;
     justify-content: flex-end;
 }
+
+.workspace__main {
+    display: flex;
+    // flex-direction: column;
+    flex-grow: 100;
+    max-width: 100vw; 
+}
+
+.component__box {
+    display: flex;
+    background-color: lightgray;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0em .7em .7em 0em;
+}
+

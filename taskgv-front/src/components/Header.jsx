@@ -5,7 +5,7 @@ import SncfLogo from '../assets/sncf-logo.png'
 import { ReactComponent as LogoTaskgv } from '../svg/TaskGV_up2.svg';
 import Logout from './Logout'
 import PopMenu from './PopMenu.jsx';
-import toolBarItems from './interface_items/ToolBarData'
+import toolBarItems from './interface_items/ToolbarData'
 
 function Header() {
 

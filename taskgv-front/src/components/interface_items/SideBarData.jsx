@@ -9,7 +9,7 @@ import { ReactComponent as NewTaskIco } from '../../svg/newTask.svg';
 const SideBarItems = [
     {
         id: 1,
-        title: 'Acceuil',
+        title: 'Accueil',
         path: '/',
         icon: <HomeIco />,
         classname: 'sidebar__element',

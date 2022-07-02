@@ -1,5 +1,5 @@
 import React from 'react'
-import toolBarItems from './interface_items/ToolBarData'
+import toolBarItems from './interface_items/ToolbarData'
 import sideBarItems from './interface_items/SideBarData'
 import Bar from './Bar'
 import { ReactComponent as LogoTaskgv } from '../svg/TaskGV_up2.svg'

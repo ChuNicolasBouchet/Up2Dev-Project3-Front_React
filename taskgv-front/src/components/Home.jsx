@@ -7,9 +7,7 @@ const Home = () => {
     return (
         <div>
             <h1>Accueil </h1>
-            <br />
             <p>home</p>
-            <Link to="/usersaxiosjwt">users list with axios with jwt from context</Link>
             <div>-</div>
             <Link to="/usersaxioscookie">users list with axios and cookie auth</Link>
             <div>-</div>

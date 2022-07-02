@@ -86,7 +86,7 @@ const Login = () => {
 						/>
 					</div>
 					<div className="login__form__item">
-						<label htmlFor="password" className="login__form__label">Password: </label>
+						<label htmlFor="password" className="login__form__label">Mot de passe: </label>
 						<input
 							type="password"
 							id="password"

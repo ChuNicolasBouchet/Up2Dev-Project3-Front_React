@@ -1,5 +1,5 @@
 
-.login_bg {
+.landing__bg {
     position: absolute;
     height:100vh;
     width: 100vw;
@@ -7,7 +7,7 @@
 }
 
 
-.login_circle_up_left {
+.landing__circle_up_left {
     height: 45vw;
     width: 45vw;
     border-radius: 50%;
@@ -18,7 +18,7 @@
     transform: translateX(-15%) translateY(-50%);
 }
 
-.taskgv_logo {
+.landing__taskgv_logo {
     position: absolute;
     top: 3.7vw;
     left: -31%;
@@ -26,7 +26,7 @@
     fill: white;
 }
 
-.cat-left {
+.landing__cat-left {
     position: absolute;
     width: 8vw;
     height: 0.34vw;
@@ -37,7 +37,7 @@
     border-radius: 1vw;
 }
 
-.cat-middle {
+.landing__cat-middle {
     position: absolute;
     width: 10.5vw;
     height: 0.34vw;
@@ -48,7 +48,7 @@
     border-radius: 1vw;
 }
 
-.cat-right {
+.landing__cat-right {
     position: absolute;
     width: 57vw;
     height: 0.34vw;
@@ -67,7 +67,7 @@
 //     height: 55vw;
 // }
 
-.overflow-hiddebox {
+.landing__overflow-hiddebox {
     overflow: hidden;
     height: 23.5vw;
 }

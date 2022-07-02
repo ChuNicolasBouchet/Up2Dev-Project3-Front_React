@@ -58,14 +58,14 @@ const Login = () => {
 	};
 
 	return (
-		<div className="login_bg">
-			<div className="overflow-hiddebox">
-				<div className="login_circle_up_left" />
+		<div className="landing__bg">
+			<div className="landing__overflow-hiddebox">
+				<div className="landing__circle_up_left" />
 			</div>
-			<LogoTaskgv className="taskgv_logo" />
-			<div className="cat-left" />
-			<div className="cat-middle" />
-			<div className="cat-right" />
+			<LogoTaskgv className="landing__taskgv_logo" />
+			<div className="landing__cat-left" />
+			<div className="landing__cat-middle" />
+			<div className="landing__cat-right" />
 			<div className="login__wrapper">
 				<p	ref={errRef}
 					className={errMsg ? "errmsg" : "offscreen"}

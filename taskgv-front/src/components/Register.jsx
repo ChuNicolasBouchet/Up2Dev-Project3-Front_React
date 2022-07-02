@@ -6,13 +6,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import axios from '../api/axios';
 
+const NAME_REGEX = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u; //unicode
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/; 
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 const REGISTER_URL = '/register';
 
 const Register = () => {
-    const emailRef = useRef();
+    const userRef = useRef();
     const errRef = useRef();
+    
+    const [firstName, setFirstName] = useState('');
+    const [validFirstName, setValidFirstName] = useState(false);
+    const [firstNameFocus, setFirstNameFocus] = useState(false);
+
+    const [lastName, setLastName] = useState('');
+    const [validLastName, setValidLastName] = useState(false);
+    const [lastNameFocus, setLastNameFocus] = useState(false);
 
     const [email, setEmail] = useState('');
     const [validEmail, setValidEmail] = useState(false);
@@ -29,9 +38,19 @@ const Register = () => {
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const [setApiResponseMessage] = useState('');
+
     useEffect(() => {
-        emailRef.current.focus();
+        userRef.current.focus();
     }, [])
+
+    useEffect(() => {
+        setValidFirstName(NAME_REGEX.test(firstName));
+    }, [firstName])
+
+    useEffect(() => {
+        setValidLastName(NAME_REGEX.test(lastName));
+    }, [lastName])
 
     useEffect(() => {
         setValidEmail(EMAIL_REGEX.test(email));
@@ -44,28 +63,31 @@ const Register = () => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [email, password, matchPassword])
+    }, [firstName, lastName, email, password, matchPassword])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // if button enabled with JS hack
-        const v1 = EMAIL_REGEX.test(email);
-        const v2 = PASSWORD_REGEX.test(password);
-        if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
+        //if button enabled with JS hack
+        const testFirstName = NAME_REGEX.test(firstName);
+        const testLastName = NAME_REGEX.test(lastName);
+        const testEmail = EMAIL_REGEX.test(email);
+        const testPassword = PASSWORD_REGEX.test(password);
+        if (!testFirstName || !testLastName || !testEmail || !testPassword) {
+            setErrMsg("Saisie invalide");
             return;
         }
         try {
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ email, password }),
+                JSON.stringify({ firstName, lastName, email, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
                 }
             );
             // TODO: remove console.logs before deployment
-            //console.log(JSON.stringify(response?.data));
-            console.log(JSON.stringify(response))
+            // console.log(JSON.stringify(response?.data));
+            //console.log(JSON.stringify(response?.data.message))
+            setApiResponseMessage(response?.data.message)
             setSuccess(true);
             //clear state and controlled inputs
             setEmail('');
@@ -98,30 +120,55 @@ const Register = () => {
                     <h1>Inscrivez-vous</h1>
                     <form onSubmit={handleSubmit} className="register_form">
                         
-                        { /*<label htmlFor="firstName">
-                            Email:
-                            <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
+                        <label htmlFor="firstName">
+                            Prénom:
+                            <FontAwesomeIcon icon={faCheck} className={validFirstName ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validFirstName || !firstName ? "hide" : "invalid"} />
                         </label>
                         <input
                             type="text"
                             id="firstName"
                             ref={userRef}
                             autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            value={firstName}
                             required
-                            aria-invalid={validName ? "false" : "true"}
+                            aria-invalid={validFirstName ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setUserFocus(true)}
-                            onBlur={() => setUserFocus(false)}
+                            onFocus={() => setFirstNameFocus(true)}
+                            onBlur={() => setFirstNameFocus(false)}
                         />
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={firstNameFocus && firstName && !validFirstName ? "instructions" : "offscreen"}>
                             <FontAwesomeIcon icon={faInfoCircle} />
                             4 à 24 charactères.<br />
                             Doit commencer par une lettre.<br />
                             Lettres, nombre, caractères spéciaux autorisés.
-            </p> */ }
+                        </p>
+
+                        <label htmlFor="lastName">
+                            Nom:
+                            <FontAwesomeIcon icon={faCheck} className={validLastName ? "valid" : "hide"} />
+                            <FontAwesomeIcon icon={faTimes} className={validLastName || !lastName ? "hide" : "invalid"} />
+                        </label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            ref={userRef}
+                            autoComplete="off"
+                            onChange={(e) => setLastName(e.target.value)}
+                            value={lastName}
+                            required
+                            aria-invalid={validLastName ? "false" : "true"}
+                            aria-describedby="uidnote"
+                            onFocus={() => setLastNameFocus(true)}
+                            onBlur={() => setLastNameFocus(false)}
+                        />
+                        <p id="uidnote" className={lastNameFocus && lastName && !validLastName ? "instructions" : "offscreen"}>
+                            <FontAwesomeIcon icon={faInfoCircle} />
+                            4 à 24 charactères.<br />
+                            Doit commencer par une lettre.<br />
+                            Lettres, nombre, caractères spéciaux autorisés.
+                        </p>
 
 
                         <label htmlFor="email">
@@ -132,7 +179,7 @@ const Register = () => {
                         <input
                             type="text"
                             id="email"
-                            ref={emailRef}
+                            ref={userRef}
                             autoComplete="off"
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}

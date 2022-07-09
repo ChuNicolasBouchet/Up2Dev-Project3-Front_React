@@ -3,7 +3,7 @@ import React from 'react'
 //import AuthContext from "../../context/AuthProvider.js"
 import axios from 'axios'
 
-function GetUsersList() {
+function UsersList() {
     //const { auth } = useContext(AuthContext);
     axios.get('http://localhost:5000/api/users', {
         withCredentials: true
@@ -13,9 +13,9 @@ function GetUsersList() {
         console.log(response.data);
     })  
     return (
-    <div>GetUsersList</div>
+    <div>UsersList</div>
     )
 }
 
-export default GetUsersList
+export default UsersList
 

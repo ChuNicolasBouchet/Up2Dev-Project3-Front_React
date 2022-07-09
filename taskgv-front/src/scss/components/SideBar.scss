@@ -44,6 +44,7 @@
 }
 
 .sidebar__li p {
+    color: rgb(54, 54, 54);
     display: block;
     @include for-tablet-landscape-down {
         display: none;

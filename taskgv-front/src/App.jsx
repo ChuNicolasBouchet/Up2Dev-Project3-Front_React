@@ -33,7 +33,7 @@ function App() {
             </Route> */}
 
             <Route element={<RequireAuth />} >
-              <Route path="workspace" element={<Workspace />}/>
+              <Route path="/" element={<Workspace />}/>
             </Route>
 
             {/*
@@ -43,7 +43,7 @@ function App() {
 
             {/* catch all => 404 */}
             <Route path="*" element={<Missing />} />
-            
+
           </Route>
         </Routes>
       </div>
@@ -52,11 +52,3 @@ function App() {
 }
 
 export default App;
-
-{/* <Route path='/profile'
-  element={
-    <Protected isLoggedIn={isLoggedIn}>
-      <Profile />
-    </Protected>
-  }
-/> */}

@@ -8,9 +8,10 @@ import Layout from './components/Layout';
 import Missing from './components/Missing';
 import Unauthorized from './components/Unauthorized';
 import Register from './components/Register'
-// import UsersList from './components/users/UsersList';
+import UsersList from './components/users/UsersList';
 import { AuthProvider } from './context/AuthProvider';
 import Workspace from './components/Workspace'
+// import UsersList from './components/users/UsersList';
 // import ToolBar from './components/ToolBar'
 
 function App() {
@@ -33,12 +34,14 @@ function App() {
             </Route> */}
 
             <Route element={<RequireAuth />} >
-              <Route path="/" element={<Workspace />}/>
+              <Route path="/" element={<Workspace />}>
+                <Route path="/userlist" element={<UsersList />} />
+              </Route>
             </Route>
 
             {/*
             <Route path="workspace" element={<Workspace />} />
-            <Route path="userlist" element={<UsersList />} />
+            
             */}
 
             {/* catch all => 404 */}

@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 import React, { useRef, useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
 
-import axios from "../api/axios";
-const LOGIN_URL = "/auth/signin";
+import axios from "axios";
 
 const Login = () => {
 	const { setAuth } = useAuth();
@@ -32,7 +32,7 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-			LOGIN_URL,
+			process.env.REACT_APP_LOGIN_URL,
 			JSON.stringify({ email, password }),
 			{
 				headers: { "Content-Type": "application/json" },

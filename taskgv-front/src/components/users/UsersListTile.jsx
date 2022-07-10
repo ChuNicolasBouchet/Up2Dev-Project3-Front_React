@@ -1,8 +1,8 @@
 import React from 'react'
 
-function UsersListCard(user) {
+function UsersListTile(user) {
   return (
-    <article className='user-card'>
+    <article className='user-list-tile'>
         <p>{`${user.firstname}`}</p>
         <p>{`${user.lastname}`}</p>
         <p>{`${user.email}`}</p>
@@ -11,4 +11,4 @@ function UsersListCard(user) {
   )
 }
 
-export default UsersListCard
+export default UsersListTile

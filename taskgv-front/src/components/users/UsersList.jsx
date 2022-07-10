@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from "react-router-dom";
-import UsersListCard from './UsersListCard';
+import UsersListTile from './UsersListTile';
 import axios from 'axios'
 
 function UsersList() {
@@ -49,7 +49,7 @@ function UsersList() {
                 ? (
                     <ul>
                         {usersList.map((user) => {
-                            return <UsersListCard
+                            return <UsersListTile
                                 key={user.id}
                                 firstname={user.firstname}
                                 lastname={user.lastname}

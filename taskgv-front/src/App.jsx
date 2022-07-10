@@ -35,7 +35,7 @@ function App() {
 
             <Route element={<RequireAuth />} >
               <Route path="/" element={<Workspace />}>
-                <Route path="/userlist" element={<UsersList />} />
+                <Route path="/userslist" element={<UsersList />} />
               </Route>
             </Route>
 

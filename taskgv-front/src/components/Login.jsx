@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 import React, { useRef, useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
 
-import axios from "../api/axios";
-const LOGIN_URL = "/auth/signin";
+import axios from "axios";
 
 const Login = () => {
 	const { setAuth } = useAuth();
@@ -32,7 +32,7 @@ const Login = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-			LOGIN_URL,
+			process.env.REACT_APP_LOGIN_URL,
 			JSON.stringify({ email, password }),
 			{
 				headers: { "Content-Type": "application/json" },
@@ -58,14 +58,14 @@ const Login = () => {
 	};
 
 	return (
-		<div className="login_bg">
-			<div className="overflow-hiddebox">
-				<div className="login_circle_up_left" />
+		<div className="landing__bg">
+			<div className="landing__overflow-hiddebox">
+				<div className="landing__circle_up_left" />
 			</div>
-			<LogoTaskgv className="taskgv_logo" />
-			<div className="cat-left" />
-			<div className="cat-middle" />
-			<div className="cat-right" />
+			<LogoTaskgv className="landing__taskgv_logo" />
+			<div className="landing__cat-left" />
+			<div className="landing__cat-middle" />
+			<div className="landing__cat-right" />
 			<div className="login__wrapper">
 				<p	ref={errRef}
 					className={errMsg ? "errmsg" : "offscreen"}
@@ -86,7 +86,7 @@ const Login = () => {
 						/>
 					</div>
 					<div className="login__form__item">
-						<label htmlFor="password" className="login__form__label">Password: </label>
+						<label htmlFor="password" className="login__form__label">Mot de passe: </label>
 						<input
 							type="password"
 							id="password"

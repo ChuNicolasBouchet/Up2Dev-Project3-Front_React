@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,7 +11,7 @@ import axios from '../api/axios';
 const NAME_REGEX = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u; //unicode
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
-const REGISTER_URL = '/register'
+const REGISTER_URL = process.env.REACT_APP_REGISTER
 
 const Register = () => {
     const userRef = useRef()

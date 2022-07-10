@@ -8,38 +8,36 @@ import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
 import axios from '../api/axios';
 
 const NAME_REGEX = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u; //unicode
-const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/; 
-const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-const REGISTER_URL = '/register';
+const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/
+const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+const REGISTER_URL = '/register'
 
 const Register = () => {
-    const userRef = useRef();
-    const errRef = useRef();
+    const userRef = useRef()
+    const errRef = useRef()
     
-    const [firstName, setFirstName] = useState('');
-    const [validFirstName, setValidFirstName] = useState(false);
-    const [firstNameFocus, setFirstNameFocus] = useState(false);
+    const [firstName, setFirstName] = useState('')
+    const [validFirstName, setValidFirstName] = useState(false)
+    const [firstNameFocus, setFirstNameFocus] = useState(false)
 
-    const [lastName, setLastName] = useState('');
-    const [validLastName, setValidLastName] = useState(false);
-    const [lastNameFocus, setLastNameFocus] = useState(false);
+    const [lastName, setLastName] = useState('')
+    const [validLastName, setValidLastName] = useState(false)
+    const [lastNameFocus, setLastNameFocus] = useState(false)
 
     const [email, setEmail] = useState('');
-    const [validEmail, setValidEmail] = useState(false);
-    const [emailFocus, setEmailFocus] = useState(false);
+    const [validEmail, setValidEmail] = useState(false)
+    const [emailFocus, setEmailFocus] = useState(false)
 
-    const [password, setPassword] = useState('');
-    const [validPassword, setValidPassword] = useState(false);
-    const [PasswordFocus, setPasswordFocus] = useState(false);
+    const [password, setPassword] = useState('')
+    const [validPassword, setValidPassword] = useState(false)
+    const [PasswordFocus, setPasswordFocus] = useState(false)
 
-    const [matchPassword, setMatchPassword] = useState('');
-    const [validMatch, setValidMatch] = useState(false);
-    const [matchFocus, setMatchFocus] = useState(false);
+    const [matchPassword, setMatchPassword] = useState('')
+    const [validMatch, setValidMatch] = useState(false)
+    const [matchFocus, setMatchFocus] = useState(false)
 
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
-
-    const [setApiResponseMessage] = useState('');
+    const [errMsg, setErrMsg] = useState('')
+    const [success, setSuccess] = useState(false)
 
     useEffect(() => {
         userRef.current.focus();
@@ -69,10 +67,10 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         //if button enabled with JS hack
-        const testFirstName = NAME_REGEX.test(firstName);
-        const testLastName = NAME_REGEX.test(lastName);
-        const testEmail = EMAIL_REGEX.test(email);
-        const testPassword = PASSWORD_REGEX.test(password);
+        const testFirstName = NAME_REGEX.test(firstName)
+        const testLastName = NAME_REGEX.test(lastName)
+        const testEmail = EMAIL_REGEX.test(email)
+        const testPassword = PASSWORD_REGEX.test(password)
         if (!testFirstName || !testLastName || !testEmail || !testPassword) {
             setErrMsg("Saisie invalide");
             return;
@@ -82,22 +80,21 @@ const Register = () => {
                 JSON.stringify({ firstName, lastName, email, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
+                    withCredentials: true,
+                    timeout: 2000
                 }
-            );
-            // TODO: remove console.logs before deployment
+            )
             // console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response?.data.message))
-            setApiResponseMessage(response?.data.message)
-            setSuccess(true);
-            //clear state and controlled inputs
-            setEmail('');
-            setPassword('');
-            setMatchPassword('');
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('Pas de réponse du serveur');
-            } else if (err.response?.status === 409) {
+            setSuccess(true)
+            setEmail('')
+            setPassword('')
+            setMatchPassword('') 
+            console.log(JSON.stringify(response?.data.message))
+            
+        } catch (error) {
+            if (error?.response) {
+                setErrMsg('Pas de réponse du serveur')
+            } else if (error.response?.status === 409) {
                 setErrMsg('Email déjà enregistré');
             } else {
                 setErrMsg('L\'enregistrement a échoué')

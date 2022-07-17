@@ -1,18 +1,18 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Header from './components/Header'
 import Login from './components/Login'
 import RequireAuth from './components/RequireAuth';
 import Layout from './components/Layout';
-// import Home from './components/Home';
 import Missing from './components/Missing';
 import Unauthorized from './components/Unauthorized';
 import Register from './components/Register'
-import UsersList from './components/users/UsersList';
 import { AuthProvider } from './context/AuthProvider';
 import Workspace from './components/Workspace'
-// import UsersList from './components/users/UsersList';
-// import ToolBar from './components/ToolBar'
+import UsersList from "./components/users/UsersList";
+import User from "./components/users/User";
+
+
 
 function App() {
 
@@ -29,20 +29,13 @@ function App() {
 
             {/* protected routes */}
 
-            {/* <Route element={<RequireAuth />} >
-              <Route path="/" element={<Home />}/>
-            </Route> */}
-
             <Route element={<RequireAuth />} >
-              <Route path="/" element={<Workspace />}>
-                <Route path="/userslist" element={<UsersList />} />
+              <Route exact path="/" element={<Workspace />}>
+                <Route path ="/users" element={<UsersList />} />
+                <Route path ="/users/:id" element={<User />}/>
               </Route>
             </Route>
 
-            {/*
-            <Route path="workspace" element={<Workspace />} />
-            
-            */}
 
             {/* catch all => 404 */}
             <Route path="*" element={<Missing />} />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import TasksServices from "../../api/TasksServices";
 // import { Link } from "react-router-dom";
-import axiosPrivate from '../../api/axios';
+import axiosPrivate from '../../api/httpClient';
 
 const TasksList = () => {
   const [tasks, setTasks] = useState([]);

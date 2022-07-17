@@ -1,18 +1,23 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
+// import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
 
 import axios from 'axios';
 
 const NAME_REGEX = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u; //unicode
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/; 
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-const REGISTER_URL = '/register';
+// const REGISTER_URL = '/register';
 
-const Register = () => {
+
+const UserEdit= () => {
+    const navigate = useNavigate();
+
+
+
     const userRef = useRef();
     const errRef = useRef();
     
@@ -40,6 +45,34 @@ const Register = () => {
     const [success, setSuccess] = useState(false);
 
     const [setApiResponseMessage] = useState('');
+
+
+
+    useEffect(() => {
+        let isMounted = true;
+        const controller = new AbortController();
+        const getUser = async () => {
+            try {
+                const response = await axios.get(process.env.REACT_APP_USERS_URL+'/9', {
+                    withCredentials: true
+                });
+
+                console.log(response.data);
+                isMounted
+
+            } catch (err) {
+                console.error(err);
+                navigate('/login', { state: { from: location }, replace: true });
+            }
+        }
+
+        getUser();
+
+        return () => {
+            isMounted = false;
+            controller.abort();
+        }
+    }, [])
 
     useEffect(() => {
         userRef.current.focus();
@@ -78,7 +111,7 @@ const Register = () => {
             return;
         }
         try {
-            const response = await axios.post(REGISTER_URL,
+            const response = await axios.post(process.env.REACT_APP_USERS_URL,
                 JSON.stringify({ firstName, lastName, email, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -108,25 +141,18 @@ const Register = () => {
 
     return (
         <div className="landing__bg">
-            <div className="landing__overflow-hiddebox">
-                <div className="landing__circle_up_left" />
-            </div>
-            <LogoTaskgv className="landing__taskgv_logo" />
-            <div className="landing__cat-left" />
-            <div className="landing__cat-middle" />
-            <div className="landing__cat-right" />
             <div className="register_wrapper">
                 {success ? (
                     <section>
-                        <h1>Enregistrement réussi !</h1>
+                        <h1>Enregistrement des modifications réussie !</h1>
                         <p>
-                            <a href="#">Connectez-vous</a>
+                            <a href="#">Re-connectez-vous</a>
                         </p>
                     </section>
                 ) : (
                     <section className="register_box">
                         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                        <h1>Inscrivez-vous</h1>
+                        <h1>Vos informations utilisateur</h1>
                         <form onSubmit={handleSubmit} className="register_form">
                             
                             <label htmlFor="firstName">
@@ -253,12 +279,6 @@ const Register = () => {
 
                             <button disabled={!validEmail || !validPassword || !validMatch ? true : false}>Valider</button>
                         </form>
-                        <p>
-                            Déjà enregistré?<br />
-                            <span className="line">
-                                <Link to="/">Connectez-vous</Link>
-                            </span>
-                        </p>
                     </section>
                 )}
             </div>
@@ -266,4 +286,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default UserEdit

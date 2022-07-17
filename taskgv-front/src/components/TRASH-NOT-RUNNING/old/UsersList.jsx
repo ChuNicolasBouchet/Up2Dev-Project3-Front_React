@@ -2,14 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from "react-router-dom";
 import UsersListTile from './UsersListTile';
-import SearchUser from "./SearchUser";
 import axios from 'axios'
 
 function UsersList() {
 
     const [usersList, setUsersList] = useState([]);
-    const [search, setSearch] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
     const navigate = useNavigate();
     const location = useLocation();
     const usersUrl = process.env.REACT_APP_USERS_URL
@@ -23,8 +20,10 @@ function UsersList() {
                 const response = await axios.get(usersUrl, {
                     withCredentials: true
                 });
+
                 //console.log(response.data);
                 isMounted && setUsersList(response.data);
+
             } catch (err) {
                 console.error(err);
                 navigate('/login', { state: { from: location }, replace: true });
@@ -39,28 +38,17 @@ function UsersList() {
         }
     }, [])
 
-    // console.log(usersList)
-
-    useEffect(() => {
-        const filteredResults = usersList.filter((user) =>
-            ((user.lastname).toLowerCase()).includes(search.toLowerCase())
-            || ((user.firstname).toLowerCase()).includes(search.toLowerCase())
-            || ((user.email).toLowerCase()).includes(search.toLowerCase()));
-        setSearchResults(filteredResults.reverse());
-    }, [usersList, search])
-
     const usersLength = usersList.length
     
     return (
     
     <div>
         <article>
-            <SearchUser search={search} setSearch={setSearch} />
             <h2>Liste des utilisateurs</h2>
             {usersLength
                 ? (
                     <ul>
-                        {searchResults.map((user) => {
+                        {usersList.map((user) => {
                             return <UsersListTile
                                 key={user.id}
                                 firstname={user.firstname}

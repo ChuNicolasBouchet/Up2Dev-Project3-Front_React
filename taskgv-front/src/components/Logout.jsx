@@ -13,8 +13,9 @@ function Logout() {
         withCredentials: true,
       }
       )
-      navigate('/') //* add the landing url after logout
+      navigate('login') //* add the landing url after logout
   }
+
 return (
   <button onClick={logout} className='logout-button'>
     <LogoutIco className='logout-ico' />

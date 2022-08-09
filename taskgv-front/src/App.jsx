@@ -11,7 +11,7 @@ import { AuthProvider } from './context/AuthProvider';
 import Workspace from './components/Workspace'
 import UsersList from "./components/users/UsersList";
 import User from "./components/users/User";
-
+import UserEdit from "./components/users/UserEdit";
 
 
 function App() {
@@ -26,20 +26,16 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="unauthorized" element={<Unauthorized />} />
             <Route path="register" element={<Register />} />
-
             {/* protected routes */}
-
             <Route element={<RequireAuth />} >
-              <Route exact path="/" element={<Workspace />}>
+              <Route exact path="/" element={<Workspace />} >
                 <Route path ="/users" element={<UsersList />} />
-                <Route path ="/users/:id" element={<User />}/>
+                <Route path ="/users/:id" element={<User />} />
+                <Route path ="/useredit/:id" element={<UserEdit />} />
               </Route>
             </Route>
-
-
             {/* catch all => 404 */}
             <Route path="*" element={<Missing />} />
-
           </Route>
         </Routes>
       </div>

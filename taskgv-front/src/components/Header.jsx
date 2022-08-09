@@ -13,8 +13,9 @@ function Header() {
 
   return (
     <div className='header__box'>
-      {/* <div className='placeholder__burger'></div> */}
-      <PopMenu menuItems={toolBarItems} menuClass='burger' className='burger-component' />
+      <div>
+          { auth.userInfos ? <PopMenu menuItems={toolBarItems} menuClass='burger' className='burger-component' /> : null}
+      </div>
       <div className='header__logo__wrapper'>
         <img className='header__logo__sncf' src={SncfLogo} alt='sncf logo' />
       </div>

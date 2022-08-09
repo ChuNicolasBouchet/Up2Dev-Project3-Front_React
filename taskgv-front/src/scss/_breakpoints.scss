@@ -1,27 +1,74 @@
-// Based on this article https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/
+// ***** Breakpoints for Responsive Screen ******
+// width scale for phone
+$phone-min-width: 320px !default;
+$phone-max-width: 504px !default;
+// height scale for phone
+$phone-min-height: 346px !default;
+$phone-max-height: 695px !default;
+// width scale for tablet
+$tablet-min-width: 480px !default;
+$tablet-max-width: 1024px !default;
+$tablet-max-width-workspace: 805 !default;
+// height scale for tablet
+$tablet-min-height: 800px !default;
+$tablet-max-height: 1440px !default;
+$tablet-max-height-workspace: 500px !default;
+// Desktop Scale
+$desktop-min-height: 768px !default;
+$desktop-max-height: 1280px !default;
 
-@mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
+// Mixins
+// For portrait phone and landscape phone 320-695
+@mixin phone(){
+    @media screen and (min-width: $phone-min-width) and (max-height: $phone-max-height){
+        @content;
+    }
+}
+// For portrait phone 320-504
+@mixin portrait-phone() {
+    @media screen and (min-width: $phone-min-width) and (max-width: $phone-max-width) and (orientation: portrait) {
+        @content;
+    }
+}
+// For landscape phone 320-695
+@mixin landscape-phone(){
+    @media screen and (min-height: $phone-min-height) and (max-height: $phone-max-height) and (orientation: landscape){
+        @content;
+    }
+}
+// For portrait tablet and landscape tablet 500-800
+@mixin tablet(){
+    @media screen and (min-width: $tablet-max-width-workspace) and (max-height: $tablet-max-height-workspace) and (orientation: landscape){
+        @content;
+    }
+}
+// For portrait tablet 480-1024
+@mixin portrait-tablet() {
+    @media screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width) and (orientation: portrait) {
+        @content;
+    }
+}
+// For landscape tablet 800-1440
+@mixin landscape-tablet(){
+    @media screen and (min-height: $tablet-min-height) and (max-height: $tablet-max-height) and (orientation: landscape){
+        @content;
+    }
+}
+// For desktop 728-1280
+@mixin desktop(){
+    @media screen and (min-height: $desktop-min-height) and (max-height: $desktop-max-height){
+        @content;
+    }
 }
 
-/// 600 -> 900
-/// This is a doc comment :/
-@mixin for-tablet-portrait-up {
-    @media (min-width: 600px) { @content; }
+
+@mixin tablet {
+    @media (max-width: 1020px) { @content; }
+}
+@mixin tablet-p_phone-l {
+    @media (max-width: 805px) { @content}
+}
+@mixin phone-p {
+    @media (max-width: 500px) { @content}
 }
 
-@mixin for-tablet-landscape-up {
-    @media (min-width: 900px) { @content; }
-}
-
-@mixin for-tablet-landscape-down {
-    @media (max-width: 1000px) { @content; }
-}
-
-@mixin for-desktop-up {
-    @media (min-width: 1200px) { @content; }
-}
-
-@mixin for-big-desktop-up {
-    @media (min-width: 1800px) { @content; }
-}

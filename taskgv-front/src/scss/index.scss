@@ -8,9 +8,9 @@
 @import './placeholders';
 @import './tooltips';
 @import './variables';
-
+@import './components/LandingLogo';
 @import './App';
-@import 'src/scss/components/Header';
+@import './components/Header';
 @import './components/Login';
 @import './components/ToolBar';
 @import './components/SideBar';

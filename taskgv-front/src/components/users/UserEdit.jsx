@@ -1,22 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useNavigate} from "react-router-dom";
-
+import {useParams} from "react-router-dom";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
-
 import axios from 'axios';
 
 const NAME_REGEX = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u; //unicode
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/; 
 const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-// const REGISTER_URL = '/register';
-
 
 const UserEdit= () => {
-    const navigate = useNavigate();
-
-
+    const { id }  = useParams();
 
     const userRef = useRef();
     const errRef = useRef();
@@ -46,26 +39,23 @@ const UserEdit= () => {
 
     const [setApiResponseMessage] = useState('');
 
-
-
     useEffect(() => {
         let isMounted = true;
         const controller = new AbortController();
+
         const getUser = async () => {
             try {
-                const response = await axios.get(process.env.REACT_APP_USERS_URL+'/9', {
+                const userUrl = process.env.REACT_APP_USERS_URL + id
+                const response = await axios.get(userUrl, {
                     withCredentials: true
                 });
 
-                console.log(response.data);
-                isMounted
+               console.log(response.data[0]); isMounted
 
             } catch (err) {
                 console.error(err);
-                navigate('/login', { state: { from: location }, replace: true });
             }
         }
-
         getUser();
 
         return () => {
@@ -111,7 +101,7 @@ const UserEdit= () => {
             return;
         }
         try {
-            const response = await axios.post(process.env.REACT_APP_USERS_URL,
+            const response = await axios.put(process.env.REACT_APP_USERS_URL,
                 JSON.stringify({ firstName, lastName, email, password }),
                 {
                     headers: { 'Content-Type': 'application/json' },
@@ -186,6 +176,7 @@ const UserEdit= () => {
                                 <FontAwesomeIcon icon={faTimes} className={validLastName || !lastName ? "hide" : "invalid"} />
                             </label>
                             <input
+                                // defaultValue={user.lastname}
                                 type="text"
                                 id="lastName"
                                 ref={userRef}
@@ -212,6 +203,7 @@ const UserEdit= () => {
                                 <FontAwesomeIcon icon={faTimes} className={validEmail || !email ? "hide" : "invalid"} />
                             </label>
                             <input
+                                // defaultValue={user.email}
                                 type="text"
                                 id="email"
                                 ref={userRef}
@@ -238,6 +230,7 @@ const UserEdit= () => {
                                 <FontAwesomeIcon icon={faTimes} className={validPassword || !password ? "hide" : "invalid"} />
                             </label>
                             <input
+                                placeholder="si vous souhaitez le changer"
                                 type="password"
                                 id="password"
                                 onChange={(e) => setPassword(e.target.value)}
@@ -262,6 +255,7 @@ const UserEdit= () => {
                                 <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPassword ? "hide" : "invalid"} />
                             </label>
                             <input
+                                placeholder="confirmez votre saisie"
                                 type="password"
                                 id="confirm_password"
                                 onChange={(e) => setMatchPassword(e.target.value)}

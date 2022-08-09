@@ -5,12 +5,12 @@
     background-color: lightgray;
     border-radius: 0.8em;
     align-items: flex-start;
-    margin: 0em .7em .6em .8em;
-    @include for-tablet-landscape-down {
+    margin: 0.7em .7em .6em .8em;
+    @include tablet {
         width: 3.5rem;
         margin: .7em .7em .6em .8em;
     }
-    @include for-phone-only {
+    @include tablet-p_phone-l {
         display: none;
     }
 }
@@ -46,8 +46,11 @@
 .sidebar__li p {
     color: rgb(54, 54, 54);
     display: block;
-    @include for-tablet-landscape-down {
+    @include tablet {
         display: none;
     }
+    //@include landscape-phone {
+    //    display: none;
+    //}
 }
 

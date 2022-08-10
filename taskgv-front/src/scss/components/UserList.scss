@@ -1,0 +1,39 @@
+.user-list-tile {
+    display: block;
+    height: 7em;
+    width: 43%;
+    min-width: 20rem;
+    background-color: #999999;
+    border-radius: .5em;
+    margin: 1rem;
+}
+
+.user-list-tile ul {
+    font-size: 1em;
+    font-weight: 100;
+}
+
+.user-list-tile p {
+    margin: .7rem;
+}
+
+.searchForm {
+    text-align: center;
+    margin: 2rem 1rem .5rem 1rem;
+}
+
+.user-list__title {
+    margin: 0 0 0 4vw;
+}
+
+.user-list__main {
+    width: 100%;
+}
+
+.user-list__board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+justify-content: start;
+}

@@ -53,13 +53,13 @@ function UsersList() {
     
     return (
     
-    <div>
+    <div className="user-list__main">
         <article>
             <SearchUser search={search} setSearch={setSearch} />
-            <h2>Liste des utilisateurs</h2>
+            <h2 className="user-list__title">Liste des utilisateurs</h2>
             {usersLength
                 ? (
-                    <ul>
+                    <ul className="user-list__board">
                         {searchResults.map((user) => {
                             return <UsersListTile
                                 key={user.id}
@@ -69,10 +69,8 @@ function UsersList() {
                             />
                         })}
                     </ul>
-                ) : <p>No users to display</p>
+                ) : <p>Pas d&apos;utilisateur à afficher</p>
             }
-
-
         </article>
     </div>
 

@@ -3,12 +3,10 @@
 //}
 
 
-.register_wrapper {
+.useredit_wrapper {
     position: relative;
-    top: 15%;
-    left: 12%;
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     @include portrait-phone {
         left: 0%;
@@ -20,9 +18,8 @@
         height: 92%;
     }
 }
-.register_box {
+.useredit_box {
     position: relative;
-    //transform: translateY(-12vw);
     max-width: 380px;
     padding: 1rem;
     background-color: rgba(0,0,0,0.3);
@@ -43,7 +40,7 @@
     }
 }
 
-.register_box h1{
+.useredit_box h1{
     padding: 0;
     margin: 0.5rem;
     @include landscape-phone {
@@ -51,7 +48,7 @@
     }
 }
 
-.register_form {
+.useredit_form {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -64,7 +61,7 @@
     }
 }
 
-.register__form__element {
+.useredit__form__element {
     display: flex;
     flex-direction: column;
     margin: 0.25rem;
@@ -73,78 +70,78 @@
     }
 }
 
-a, a:visited {
-    color: #fff;
-}
-
-input[type="text"],
-input[type="password"],
-button,
-textarea {
-  font-size: 1.2em;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
-}
-
-
-.login__button {
-  padding: 0.5rem;
-}
-
-li {
-    list-style-type: none;
-}
-
-.instructions {
-    font-size: 0.75rem;
-    border-radius: 0.5rem;
-    background: #000;
-    color: #fff;
-    padding: 0.25rem;
-    position: relative;
-    bottom: -10px;
-}
-
-.instructions > svg {
-    margin-right: 0.25rem;
-}
-
-.offscreen {
-    position: absolute;
-    left: -9999px;
-}
-
-.hide {
-    display: none;
-}
-
-.valid {
-    color: limegreen;
-    margin-left: 0.25rem;
-}
-
-.invalid {
-    color: red;
-    margin-left: 0.25rem;
-}
-
-.errmsg {
-    background-color: lightpink;
-    color: firebrick;
-    font-weight: bold;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-    min-width: 7rem;
-    text-align: center;
-    border-radius: 8px;
-    margin-left: 35vw;
-    margin-right: 35vw;
-}
-
-.to-connect {
-    text-align: center;
-}
-.register__ask-registered {
+//a, a:visited {
+//    color: #fff;
+//}
+//
+//input[type="text"],
+//input[type="password"],
+//button,
+//textarea {
+//  font-size: 1.2em;
+//  padding: 0.25rem;
+//  border-radius: 0.5rem;
+//}
+//
+//
+//.login__button {
+//  padding: 0.5rem;
+//}
+//
+//li {
+//    list-style-type: none;
+//}
+//
+//.instructions {
+//    font-size: 0.75rem;
+//    border-radius: 0.5rem;
+//    background: #000;
+//    color: #fff;
+//    padding: 0.25rem;
+//    position: relative;
+//    bottom: -10px;
+//}
+//
+//.instructions > svg {
+//    margin-right: 0.25rem;
+//}
+//
+//.offscreen {
+//    position: absolute;
+//    left: -9999px;
+//}
+//
+//.hide {
+//    display: none;
+//}
+//
+//.valid {
+//    color: limegreen;
+//    margin-left: 0.25rem;
+//}
+//
+//.invalid {
+//    color: red;
+//    margin-left: 0.25rem;
+//}
+//
+//.errmsg {
+//    background-color: lightpink;
+//    color: firebrick;
+//    font-weight: bold;
+//    padding: 0.5rem;
+//    margin-bottom: 0.5rem;
+//    min-width: 7rem;
+//    text-align: center;
+//    border-radius: 8px;
+//    margin-left: 35vw;
+//    margin-right: 35vw;
+//}
+//
+//.to-connect {
+//    text-align: center;
+//}
+.useredit__ask-registered {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -152,57 +149,57 @@ li {
         flex-direction: row;
     }
 }
-.register__ask-registered p, link {
+.useredit__ask-registered p, link {
     margin: 0em;
     padding: 0em;
     margin-right: 1rem;
 }
-.flexGrow {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
-.tologin {
-    text-align: center;
-}
+//.flexGrow {
+//    flex-grow: 1;
+//    display: flex;
+//    justify-content: flex-start;
+//    align-items: flex-end;
+//}
+//.tologin {
+//    text-align: center;
+//}
+//
+//.btn_valid {
+//    margin-top: 1.5rem;
+//    width: 10rem;
+//}
+//
+//.btn_wrapper {
+//    display: flex;
+//    justify-content: center;
+//}
 
-.btn_valid {
-    margin-top: 1.5rem;
-    width: 10rem;
-}
-
-.btn_wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.register__form__firstname {
+.useredit__form__firstname {
     @include landscape-phone {
         order: 1;
     }
 }
-.register__form__lastname {
+.useredit__form__lastname {
     @include landscape-phone {
         order: 3;
     }
 }
-.register__form__email {
+.useredit__form__email {
     @include landscape-phone {
         order: 5;
     }
 }
-.register__form__password {
+.useredit__form__password {
     @include landscape-phone {
         order: 2;
     }
 }
-.register__form__repassword {
+.useredit__form__repassword {
     @include landscape-phone {
         order: 4;
     }
 }
-.register__form__button {
+.useredit__form__button {
     @include landscape-phone {
         order: 6;
     }

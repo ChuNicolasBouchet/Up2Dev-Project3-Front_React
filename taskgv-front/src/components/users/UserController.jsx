@@ -6,9 +6,7 @@ const getUser = async (id) => {
         const response = await axios.get(userUrl, {
             withCredentials: true
         });
-
         return response.data[0]
-
     } catch (err) {
         console.error(err);
     }

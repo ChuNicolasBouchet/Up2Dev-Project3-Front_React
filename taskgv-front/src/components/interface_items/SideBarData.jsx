@@ -42,7 +42,7 @@ const SideBarItems = [
     {
         id: 6,
         title: 'Utilisateurs',
-        path: '/',
+        path: '/users',
         icon: <UserIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'

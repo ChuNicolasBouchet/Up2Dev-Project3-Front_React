@@ -30,7 +30,7 @@ function App() {
             <Route element={<RequireAuth />} >
               <Route exact path="/" element={<Workspace />} >
                 <Route path ="/users" element={<UsersList />} />
-                <Route path ="/users/:id" element={<User />} />
+                <Route path ="/user/:id" element={<User />} />
                 <Route path ="/useredit/:id" element={<UserEdit />} />
               </Route>
             </Route>

@@ -63,6 +63,7 @@ function UsersList() {
                         {searchResults.map((user) => {
                             return <UsersListTile
                                 key={user.id}
+                                id={user.id}
                                 firstname={user.firstname}
                                 lastname={user.lastname}
                                 email={user.email}

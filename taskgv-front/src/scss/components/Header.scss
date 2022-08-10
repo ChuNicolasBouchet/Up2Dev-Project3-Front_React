@@ -1,4 +1,5 @@
 .header__box {
+    //position: fixed;
     display: flex;
     height: 48px;
     background-color: $carbone;
@@ -70,7 +71,7 @@
     justify-content: center;
     flex-direction: row;
     font-size: 18px;
-    margin-right: 15px;
+    margin-right: 10px;
     text-decoration: none;
     color: $blanc;
     margin-left: .7em;

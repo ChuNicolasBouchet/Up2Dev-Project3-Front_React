@@ -24,10 +24,14 @@
 
 .user-list__title {
     margin: 0 0 0 4vw;
+    @include phone-p {
+        text-align: center;
+    }
 }
 
 .user-list__main {
     width: 100%;
+    overflow: hidden;
 }
 
 .user-list__board {
@@ -35,5 +39,10 @@
     flex-wrap: wrap;
     width: 100%;
     margin: 0;
-justify-content: start;
+    justify-content: start;
+    overflow: auto;
+    height: 60vh;
+    //flex:6;
+    //flex-grow: 1;
+    //min-height: 0;
 }

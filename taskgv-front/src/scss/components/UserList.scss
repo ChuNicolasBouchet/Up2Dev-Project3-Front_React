@@ -20,35 +20,33 @@
 
 .searchForm {
     text-align: center;
-    margin: 1.5rem 1rem .5rem 1rem;
+    padding: 1.5rem 1rem .5rem 1rem;
 }
 
 .user-list__title {
     margin: 0 0 0 4vw;
     @include phone-p {
-        //text-align: center;
         display: none;
     }
 }
 
 .user-list__main {
-    //width: 100%;
-    overflow: hidden;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: 0 .7em .7em 0;
+    @include tablet-p_phone-l {
+        margin: 0;
+        border-radius:0;
+    }
 }
 
 .user-list__board {
     display: flex;
     flex-wrap: wrap;
-    //width:96%;
     margin: 0;
     padding: 0;
-    //justify-content: start;
-    overflow: scroll;
-    //height: 70vh;
-    max-height: calc(100vh - 220px);
-    //flex:6;
-    //flex-grow: 1;
-    //min-height: 0;
+    overflow: auto;
+    max-height: calc(100vh - 232px);
     @include tablet {
         max-height: calc(100vh - 207px);
     }
@@ -58,4 +56,37 @@
     @include tablet {
         max-height: calc(100vh - 136px);
     }
+}
+::-webkit-scrollbar {
+    width: 19px;
+    height: 19px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #999999;
+    border: 5px solid #d3d3d3;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #000000;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 5px solid #d3d3d3;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+    background: #4a4a4a;
+}
+::-webkit-scrollbar-track:active {
+    background: #262626;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
 }

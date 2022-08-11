@@ -25,7 +25,9 @@
 .workspace__body {
     display: flex;
     flex-direction: column;
-    flex-grow: 100;
+    //flex-grow: 100;
+    height: 92vh;
+    //overflow: scroll;
 }
 .workspace__head {
     display: flex;
@@ -33,27 +35,27 @@
 }
 
 .workspace__main {
-    display: flex;
+    //display: flex;
     //flex-grow: 100;
     //max-width: 100vw;
 }
 
-.component__box {
-    display: flex;
-    background-color: lightgray;
-    width: 100%;
-    flew-grow: auto;
-    border-radius: 10px;
-    margin: 0em .7em .7em 0em;
-    @include portrait-phone {
-        width: 100%;
-        height: 92vh;
-        margin: 0.7rem;
-    }
-    @include tablet-p_phone-l {
-        width: 100vw;
-        height: 85vh;
-        margin: 0.7rem;
-    }
-}
+//.component__box {
+//    display: flex;
+//    background-color: lightgray;
+//    width: 100%;
+//    flew-grow: auto;
+//    border-radius: 10px;
+//    margin: 0em .7em .7em 0em;
+//    @include portrait-phone {
+//        width: 100%;
+//        height: 92vh;
+//        margin: 0.7rem;
+//    }
+//    @include tablet-p_phone-l {
+//        width: 100vw;
+//        height: 85vh;
+//        margin: 0.7rem;
+//    }
+//}
 

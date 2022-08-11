@@ -18,9 +18,9 @@ function Workspace() {
                 <Bar barItems={toolBarItems} barClass='toolbar' className='toolbar__component'/>
             </div>
             <div className="workspace__main">
-                <div className="component__box">
+                {/*<div className="component__box">*/}
                     <Outlet />
-                </div>
+                {/*</div>*/}
             </div>
         </div>
     </div>

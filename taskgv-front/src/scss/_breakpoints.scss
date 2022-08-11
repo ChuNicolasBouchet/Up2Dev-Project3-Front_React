@@ -71,4 +71,3 @@ $desktop-max-height: 1280px !default;
 @mixin phone-p {
     @media (max-width: 500px) { @content}
 }
-

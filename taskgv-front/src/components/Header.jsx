@@ -5,7 +5,7 @@ import SncfLogo from '../assets/sncf-logo.png'
 import { ReactComponent as LogoTaskgv } from '../svg/TaskGV_up2.svg';
 import Logout from './Logout'
 import PopMenu from './PopMenu.jsx';
-import toolBarItems from './interface_items/ToolbarData'
+import burgerMenuItems from './interface_items/BurgerMenu'
 
 function Header() {
 
@@ -14,7 +14,7 @@ function Header() {
   return (
     <div className='header__box'>
       <div>
-          { auth.userInfos ? <PopMenu menuItems={toolBarItems} menuClass='burger' className='burger-component' /> : null}
+          { auth.userInfos ? <PopMenu menuItems={burgerMenuItems} menuClass='burger' className='burger-component' /> : null}
       </div>
       <div className='header__logo__wrapper'>
         <img className='header__logo__sncf' src={SncfLogo} alt='sncf logo' />

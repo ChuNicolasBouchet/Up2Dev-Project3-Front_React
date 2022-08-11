@@ -2,6 +2,10 @@ import React, {useContext} from 'react'
 import {NavLink} from 'react-router-dom';
 import AuthContext from "../../context/AuthProvider";
 import UserController from "./UserController";
+// import {ReactComponent as DeleteIco} from '../../svg/delete.svg';
+// import {ReactComponent as EditIco} from '../../svg/edit.svg';
+import DeleteButton from "../buttons/DeleteButton";
+import EditButton from "../buttons/EditButton";
 
 function UsersListTile(user) {
     const { auth } = useContext(AuthContext);
@@ -13,11 +17,11 @@ function UsersListTile(user) {
         <p>{`${user.firstname}`}</p>
         <p>{`${user.lastname}`}</p>
         <p>{`${user.email}`}</p>
-        <div className='user-edit-btn__wrapper'>
-            { auth.userInfos.userId[0] === user.id || auth.userAuthorities.isAdmin[0] ? <NavLink to={`/useredit/${user.id}`}><button className='user-edit-btn'>Modifier</button> </NavLink> : null }
-        </div>
-        <div className='user-delete-btn__wrapper'>
-              { auth.userInfos.userId[0] === user.id || auth.userAuthorities.isAdmin[0] ? <button className='user-delete-btn' onClick={() => UserController.deleteUser(user.id)}>Supprimer</button>: null }
+        <div className='user-list__btn__wrapper'>
+            {/*{ auth.userInfos.userId[0] === user.id || auth.userAuthorities.isAdmin[0] ? <NavLink to={`/useredit/${user.id}`}><button className='user-edit-btn'>Modifier<EditIco classname='user-edit-btn__edit-ico' /></button> </NavLink> : null }*/}
+            { auth.userInfos.userId[0] === user.id || auth.userAuthorities.isAdmin[0] ? <NavLink to={`/useredit/${user.id}`}><EditButton /></NavLink> : null }
+
+            {auth.userInfos.userId[0] === user.id || auth.userAuthorities.isAdmin[0] ? <DeleteButton className='delete-button' onClick={() => UserController.deleteUser(user.id)}></DeleteButton> : null }
         </div>
       </div>
     )

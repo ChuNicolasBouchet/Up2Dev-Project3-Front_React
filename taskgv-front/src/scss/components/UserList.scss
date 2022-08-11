@@ -4,7 +4,7 @@
     height: 10rem;
     width: 20rem;
     flex-grow: 1;
-    background-color: #999999;
+    background-color: #eeeeee;
     border-radius: .5em;
     margin: 1rem;
 }
@@ -24,12 +24,18 @@
 }
 
 .user-list__title {
-    margin: 0 0 0 4vw;
+    margin: 0 0 0 3vw;
     @include phone-p {
         display: none;
     }
 }
-
+.user-list__btn__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    gap: 1rem;
+    margin-right: .5rem;
+}
 .user-list__main {
     background-color: lightgray;
     border-radius: 10px;

@@ -44,7 +44,10 @@
 }
 
 .sidebar__li {
-    padding: 0.5em;
+    padding: 1em .5em 1em .5em;
+    @include tablet {
+        padding: .5em .5em .5em .5em;
+    }
 }
 .sidebar__li i {
     height: 1.7em;

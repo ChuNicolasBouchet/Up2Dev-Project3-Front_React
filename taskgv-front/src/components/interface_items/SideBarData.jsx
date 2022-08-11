@@ -1,41 +1,41 @@
 import React from 'react'
-import { ReactComponent as HomeIco } from '../../svg/home.svg';
-import { ReactComponent as FastStartIco } from '../../svg/fastStart.svg';
-import { ReactComponent as NewIco } from '../../svg/new.svg';
+import { ReactComponent as MyTasksIco } from '../../svg/myTasks.svg';
+import { ReactComponent as ProjectIco } from '../../svg/project.svg';
+import { ReactComponent as Kanban } from '../../svg/kanban.svg';
 import { ReactComponent as UserIco } from '../../svg/user.svg';
-import { ReactComponent as HelpIco } from '../../svg/help.svg';
-import { ReactComponent as NewTaskIco } from '../../svg/newTask.svg';
+import { ReactComponent as SettingsIco } from '../../svg/projectSettings.svg';
+import { ReactComponent as DashboardIco } from '../../svg/favorite.svg';
 
 const SideBarItems = [
     {
         id: 1,
-        title: 'Accueil',
+        title: 'Mes tâches',
         path: '/',
-        icon: <HomeIco />,
+        icon: <MyTasksIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
     },
     {
         id: 2,
-        title: 'Démarrage rapide',
+        title: 'Mes projets',
         path: '/',
-        icon: <FastStartIco />,
+        icon: <ProjectIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
     },
     {
         id: 3,
-        title: 'Nouveau projet',
+        title: 'Kanban',
         path: '/',
-        icon: <NewIco />,
+        icon: <Kanban />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
     },
     {
         id: 4,
-        title: 'Nouvelle tâche',
+        title: 'Tableau de bord',
         path: '/',
-        icon: <NewTaskIco />,
+        icon: <DashboardIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
     },
@@ -49,9 +49,9 @@ const SideBarItems = [
     },
     {
         id: 5,
-        title: 'coucouAide',
+        title: 'Réglages',
         path: '/',
-        icon: <HelpIco />,
+        icon: <SettingsIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
     }

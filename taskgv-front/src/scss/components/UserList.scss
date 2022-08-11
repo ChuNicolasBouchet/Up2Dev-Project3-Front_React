@@ -52,15 +52,15 @@
     margin: 0;
     padding: 0;
     overflow: auto;
-    max-height: calc(100vh - 228px);
+    height: calc(100vh - 228px);
     @include tablet {
-        max-height: calc(100vh - 214px);
+        height: calc(100vh - 214px);
     }
     @include tablet-p_phone-l {
-        max-height: calc(100vh - 143px);
+        height: calc(100vh - 143px);
     }
     @include phone-p {
-        max-height: calc(100vh - 136px);
+        height: calc(100vh - 136px);
     }
 }
 ::-webkit-scrollbar {

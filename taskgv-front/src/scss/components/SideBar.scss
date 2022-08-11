@@ -1,6 +1,6 @@
 .sidebar__box {
     display: flex;
-    height: 30em;
+    min-height: 20em;
     width: 12em;
     background-color: lightgray;
     border-radius: 0.8em;
@@ -12,6 +12,16 @@
     }
     @include tablet-p_phone-l {
         display: none;
+    }
+   height: calc(100vh - 134px);
+    @include tablet {
+        height: calc(100vh - 69px);
+    }
+    @include tablet-p_phone-l {
+        height: calc(100vh - 49px);
+    }
+    @include phone-p {
+        height: calc(100vh - 136px);
     }
 }
 

@@ -54,7 +54,6 @@ function UsersList() {
     return (
     
     <div className="user-list__main">
-        {/*<article>*/}
             <SearchUser search={search} setSearch={setSearch} />
             <h2 className="user-list__title">Liste des utilisateurs</h2>
             {usersLength
@@ -72,7 +71,6 @@ function UsersList() {
                     </ul>
                 ) : <p>Pas d&apos;utilisateur à afficher</p>
             }
-        {/*</article>*/}
     </div>
 
     )

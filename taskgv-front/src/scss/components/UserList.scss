@@ -52,14 +52,14 @@
     margin: 0;
     padding: 0;
     overflow: auto;
-    max-height: calc(100vh - 232px);
+    max-height: calc(100vh - 228px);
     @include tablet {
-        max-height: calc(100vh - 207px);
+        max-height: calc(100vh - 214px);
     }
     @include tablet-p_phone-l {
-        max-height: calc(100vh - 147px);
+        max-height: calc(100vh - 143px);
     }
-    @include tablet {
+    @include phone-p {
         max-height: calc(100vh - 136px);
     }
 }

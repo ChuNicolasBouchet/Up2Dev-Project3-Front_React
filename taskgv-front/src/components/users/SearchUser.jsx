@@ -3,7 +3,7 @@ import React from "react";
 
 const SearchUser = ({ search, setSearch }) => {
     return (
-        <nav className="Nav">
+        <nav className="user-search_wrapper">
             <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
                 <label htmlFor="search">Recherche d&apos;un utilisateur : </label>
                 <input

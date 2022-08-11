@@ -12,6 +12,7 @@ import Workspace from './components/Workspace'
 import UsersList from "./components/users/UsersList";
 import User from "./components/users/User";
 import UserEdit from "./components/users/UserEdit";
+import Empty from "./components/Empty";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             {/* protected routes */}
             <Route element={<RequireAuth />} >
               <Route exact path="/" element={<Workspace />} >
+                <Route path ="/empty" element={<Empty />} />
                 <Route path ="/users" element={<UsersList />} />
                 <Route path ="/user/:id" element={<User />} />
                 <Route path ="/useredit/:id" element={<UserEdit />} />

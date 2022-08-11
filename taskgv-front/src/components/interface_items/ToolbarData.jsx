@@ -9,7 +9,7 @@ const ToolBarItems = [
     {
         id: 1,
         title: 'Accueil',
-        path: '/',
+        path: '/empty',
         icon: <HomeIco />,
         classname: 'toolbar__element',
         activeclassname: 'toolbar__item__active'
@@ -17,7 +17,7 @@ const ToolBarItems = [
     {
         id: 2,
         title: 'Démarrage rapide',
-        path: '/',
+        path: '/empty',
         icon: <FastStartIco />,
         classname: 'toolbar__element',
         activeclassname: 'toolbar__item__active'
@@ -25,7 +25,7 @@ const ToolBarItems = [
     {
         id: 3,
         title: 'Nouveau projet',
-        path: '/',
+        path: '/empty',
         icon: <NewIco />,
         classname: 'toolbar__element',
         activeclassname: 'toolbar__item__active'
@@ -33,7 +33,7 @@ const ToolBarItems = [
     {
         id: 4,
         title: 'Nouvelle tâche',
-        path: '/',
+        path: '/empty',
         icon: <NewTaskIco />,
         classname: 'toolbar__element',
         activeclassname: 'toolbar__item__active'
@@ -41,7 +41,7 @@ const ToolBarItems = [
     {
         id: 5,
         title: 'Aide',
-        path: '/',
+        path: '/empty',
         icon: <HelpIco />,
         classname: 'toolbar__element',
         activeclassname: 'toolbar__item__active'

@@ -10,7 +10,7 @@ const SideBarItems = [
     {
         id: 1,
         title: 'Mes tâches',
-        path: '/',
+        path: '/empty',
         icon: <MyTasksIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
@@ -18,7 +18,7 @@ const SideBarItems = [
     {
         id: 2,
         title: 'Mes projets',
-        path: '/',
+        path: '/empty',
         icon: <ProjectIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
@@ -26,7 +26,7 @@ const SideBarItems = [
     {
         id: 3,
         title: 'Kanban',
-        path: '/',
+        path: '/empty',
         icon: <Kanban />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
@@ -34,7 +34,7 @@ const SideBarItems = [
     {
         id: 4,
         title: 'Tableau de bord',
-        path: '/',
+        path: '/empty',
         icon: <DashboardIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'
@@ -50,7 +50,7 @@ const SideBarItems = [
     {
         id: 5,
         title: 'Réglages',
-        path: '/',
+        path: '/empty',
         icon: <SettingsIco />,
         classname: 'sidebar__element',
         activeclassname: 'sidebar__item__active'

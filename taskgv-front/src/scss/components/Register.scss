@@ -137,7 +137,13 @@ li {
     margin-bottom: 0.5rem;
     text-align: center;
     border-radius: 8px;
-
+    max-width: 400px;
+    align-self: center;
+    @include landscape-phone {
+        max-width: 95vw;
+        margin: 0;
+        padding: 0.4rem
+    }
 }
 
 .to-connect {

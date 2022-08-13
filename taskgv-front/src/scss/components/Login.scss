@@ -13,6 +13,9 @@
 
 .login__wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
     top: 20vh;
     @include landscape-phone {
     top: 10vh;

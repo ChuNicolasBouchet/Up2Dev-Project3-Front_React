@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LandingLogo from "./LandingLogo";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from 'axios';
+import axios from '../api/httpClient';
 
 const NAME_REGEX = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u; //unicode
 const EMAIL_REGEX = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/; 
@@ -140,7 +140,6 @@ const Register = () => {
                                     onBlur={() => setFirstNameFocus(false)}
                                 />
                                 <p id="uidnote" className={firstNameFocus && firstName && !validFirstName ? "instructions" : "offscreen"}>
-                                    <FontAwesomeIcon icon={faInfoCircle} />
                                     4 à 24 charactères.<br />
                                     Doit commencer par une lettre.<br />
                                     Lettres, nombre, caractères spéciaux autorisés.
@@ -166,7 +165,6 @@ const Register = () => {
                                     onBlur={() => setLastNameFocus(false)}
                                 />
                                 <p id="uidnote" className={lastNameFocus && lastName && !validLastName ? "instructions" : "offscreen"}>
-                                    <FontAwesomeIcon icon={faInfoCircle} />
                                     4 à 24 charactères.<br />
                                     Doit commencer par une lettre.<br />
                                     Lettres, nombre, caractères spéciaux autorisés.
@@ -192,7 +190,6 @@ const Register = () => {
                                     onBlur={() => setEmailFocus(false)}
                                 />
                                 <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"}>
-                                    <FontAwesomeIcon icon={faInfoCircle} />
                                     4 à 24 charactères.<br />
                                     Doit commencer par une lettre.<br />
                                     Lettres, nombre, caractères spéciaux autorisés.
@@ -216,7 +213,6 @@ const Register = () => {
                                     onBlur={() => setPasswordFocus(false)}
                                 />
                                 <p id="passwordnote" className={PasswordFocus && !validPassword ? "instructions" : "offscreen"}>
-                                    <FontAwesomeIcon icon={faInfoCircle} />
                                     8 à 24 caractères.<br />
                                     Doit contenir au moins une lettre minuscule,<br />
                                     une majuscule et un caratère spécial. <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
@@ -241,7 +237,6 @@ const Register = () => {
                                     onBlur={() => setMatchFocus(false)}
                                 />
                                 <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                                    <FontAwesomeIcon icon={faInfoCircle} />
                                     Le mot de passe et sa confirmation doivent êtres identiques.
                                 </p>
                             </div>

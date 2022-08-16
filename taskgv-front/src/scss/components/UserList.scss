@@ -1,0 +1,98 @@
+.user-list-tile {
+    display: block;
+    //height: 7em;
+    height: 10rem;
+    width: 20rem;
+    flex-grow: 1;
+    background-color: #eeeeee;
+    border-radius: .5em;
+    margin: 1rem;
+}
+
+.user-list-tile ul {
+    font-size: 1em;
+    font-weight: 100;
+}
+
+.user-list-tile p {
+    margin: .7rem;
+}
+
+.searchForm {
+    text-align: center;
+    padding: 1.5rem 1rem .5rem 1rem;
+}
+
+.user-list__title {
+    margin: 0 0 0 3vw;
+    @include phone-p {
+        display: none;
+    }
+}
+.user-list__btn__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    gap: 1rem;
+    margin-right: .5rem;
+}
+.user-list__main {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: 0 .7em .7em 0;
+    @include tablet-p_phone-l {
+        margin: 0;
+        border-radius:0;
+    }
+}
+
+.user-list__board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: calc(100vh - 228px);
+    @include tablet {
+        height: calc(100vh - 214px);
+    }
+    @include tablet-p_phone-l {
+        height: calc(100vh - 143px);
+    }
+    @include phone-p {
+        height: calc(100vh - 136px);
+    }
+}
+::-webkit-scrollbar {
+    width: 19px;
+    height: 19px;
+}
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb {
+    background: #999999;
+    border: 5px solid #d3d3d3;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #000000;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border: 5px solid #d3d3d3;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+    background: #4a4a4a;
+}
+::-webkit-scrollbar-track:active {
+    background: #262626;
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+}

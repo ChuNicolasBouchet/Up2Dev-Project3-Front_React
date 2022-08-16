@@ -8,9 +8,9 @@
 @import './placeholders';
 @import './tooltips';
 @import './variables';
-
+@import './components/LandingLogo';
 @import './App';
-@import 'src/scss/components/Header';
+@import './components/Header';
 @import './components/Login';
 @import './components/ToolBar';
 @import './components/SideBar';
@@ -19,10 +19,19 @@
 @import './components/Logout';
 @import './components/Burger';
 @import './components/Register';
-@import './components/UserListTile.scss';
-
+@import './components/UserList';
+@import './components/UserEdit';
+@import './components/DeleteButton';
+@import './components/EditButton';
+@import './components/SearchUser';
+@import './components/Empty';
 
 body {
     margin: 0;
     font-family: $wcs-font-sans-serif;
+}
+
+html {
+    min-width:350px;
+    min-height:375px;
 }

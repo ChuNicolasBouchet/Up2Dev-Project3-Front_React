@@ -1,0 +1,35 @@
+.edit-button {
+  font-family: "Avenir";
+  color: #666666;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px #dcdcdc solid;
+  background: linear-gradient(180deg, #ffffff 5%, #f6f6f6 100%);
+  text-shadow: 1px 1px 1px #ffffff;
+  box-shadow: inset 1px 1px 2px 0px #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+}
+.edit-button:hover {
+  background: linear-gradient(180deg, #f6f6f6 5%, #ffffff 100%);
+}
+.edit-button-icon {
+  padding: 4px 0px;
+  color: #0556f7;
+  text-shadow: none;
+}
+.edit-button-icon svg {
+  vertical-align: middle;
+  position: relative;
+  font-size: 26px;
+  left: 4px;
+}
+.edit-button-text {
+  padding: 4px 7px;
+
+}
+a {
+  text-decoration: none;
+}

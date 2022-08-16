@@ -2,8 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import useAuth from "../hooks/useAuth";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ReactComponent as LogoTaskgv } from "../svg/TaskGV_up2.svg";
-
+import LandingLogo from "./LandingLogo"
 import axios from "axios";
 
 const Login = () => {
@@ -45,13 +44,13 @@ const Login = () => {
 			navigate(from, { replace: true });
 			} catch (err) {
 				if (!err?.response) {
-					setErrMsg("No Server Response");
+					setErrMsg("Pas de réponse du serveur");
 				} else if (err.response?.status === 400) {
-					setErrMsg("Missing Username or Password");
+					setErrMsg("Il manque le nom d'utilisateur ou le mot de passe");
 				} else if (err.response?.status === 401) {
-					setErrMsg("Unauthorized");
+					setErrMsg("Vous n'êtes pas autorisé à consulter cette ressource");
 				} else {
-					setErrMsg("Login Failed");
+					setErrMsg("La connection a échouée");
 				}
 			errRef.current.focus();
 		}
@@ -59,13 +58,7 @@ const Login = () => {
 
 	return (
 		<div className="landing__bg">
-			<div className="landing__overflow-hiddebox">
-				<div className="landing__circle_up_left" />
-			</div>
-			<LogoTaskgv className="landing__taskgv_logo" />
-			<div className="landing__cat-left" />
-			<div className="landing__cat-middle" />
-			<div className="landing__cat-right" />
+			<LandingLogo className="landing-logo__login"/>
 			<div className="login__wrapper">
 				<p	ref={errRef}
 					className={errMsg ? "errmsg" : "offscreen"}
@@ -99,7 +92,7 @@ const Login = () => {
 					<p>
 						Nouvel utilisateur ?<br />
 						<span className="line">
-							<Link to="/register">Enregistrez-vous !</Link>
+							<Link to="/register">Inscrivez-vous !</Link>
 						</span>
 					</p>
 				</form>

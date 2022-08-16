@@ -1,17 +1,27 @@
 .sidebar__box {
     display: flex;
-    height: 30em;
+    min-height: 20em;
     width: 12em;
     background-color: lightgray;
     border-radius: 0.8em;
     align-items: flex-start;
-    margin: 0em .7em .6em .8em;
-    @include for-tablet-landscape-down {
+    margin: 0.7em .7em .6em .8em;
+    @include tablet {
         width: 3.5rem;
         margin: .7em .7em .6em .8em;
     }
-    @include for-phone-only {
+    @include tablet-p_phone-l {
         display: none;
+    }
+   height: calc(100vh - 134px);
+    @include tablet {
+        height: calc(100vh - 69px);
+    }
+    @include tablet-p_phone-l {
+        height: calc(100vh - 49px);
+    }
+    @include phone-p {
+        height: calc(100vh - 136px);
     }
 }
 
@@ -34,7 +44,10 @@
 }
 
 .sidebar__li {
-    padding: 0.5em;
+    padding: 1em .5em 1em .5em;
+    @include tablet {
+        padding: .5em .5em .5em .5em;
+    }
 }
 .sidebar__li i {
     height: 1.7em;
@@ -46,8 +59,11 @@
 .sidebar__li p {
     color: rgb(54, 54, 54);
     display: block;
-    @include for-tablet-landscape-down {
+    @include tablet {
         display: none;
     }
+    //@include landscape-phone {
+    //    display: none;
+    //}
 }
 

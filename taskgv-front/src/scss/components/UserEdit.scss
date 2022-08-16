@@ -1,0 +1,114 @@
+
+.useredit_wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include portrait-phone {
+        left: 0%;
+        top: 3%;
+    }
+    @include landscape-phone {
+        left: 0%;
+        top: 0%;
+        height: 92%;
+    }
+}
+.useredit_box {
+    position: relative;
+    max-width: 380px;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 16px;
+    @include portrait-phone {
+        width: 100%;
+        max-width: 100%;
+        margin: 0.5rem;
+        justify-content: space-between;
+        max-height: 100%;
+    }
+    @include landscape-phone {
+        width: 100%;
+        max-width: 100%;
+        margin: 0.5rem;
+        justify-content: space-between;
+        max-height: 100%;
+    }
+}
+
+.useredit_box h1{
+    padding: 0;
+    margin: 0.5rem;
+    @include landscape-phone {
+        max-width: 40%;
+    }
+}
+
+.useredit_form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+    @include landscape-phone {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.useredit__form__element {
+    display: flex;
+    flex-direction: column;
+    margin: 0.25rem;
+    @include landscape-phone {
+        width: 40vw;
+    }
+}
+
+.useredit__ask-registered {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include landscape-phone {
+        flex-direction: row;
+    }
+}
+.useredit__ask-registered p, link {
+    margin: 0em;
+    padding: 0em;
+    margin-right: 1rem;
+}
+
+.useredit__form__firstname {
+    @include landscape-phone {
+        order: 1;
+    }
+}
+.useredit__form__lastname {
+    @include landscape-phone {
+        order: 3;
+    }
+}
+.useredit__form__email {
+    @include landscape-phone {
+        order: 5;
+    }
+}
+.useredit__form__password {
+    @include landscape-phone {
+        order: 2;
+    }
+}
+.useredit__form__repassword {
+    @include landscape-phone {
+        order: 4;
+    }
+}
+.useredit__form__button {
+    @include landscape-phone {
+        order: 6;
+    }
+}
+
+

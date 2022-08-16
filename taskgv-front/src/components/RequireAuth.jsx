@@ -7,7 +7,7 @@ const RequireAuth = () => {
     const location = useLocation();
 
     return (
-        auth.userInfos //?.find(role => allowedRoles?.includes(role))
+        auth.userInfos
             ? <Outlet />
             : auth?.userInfos
                 ? <Navigate to="unauthorized" state={{ from: location }} replace />
@@ -15,4 +15,4 @@ const RequireAuth = () => {
     );
 }
 
-export default RequireAuth; 
+export default RequireAuth;

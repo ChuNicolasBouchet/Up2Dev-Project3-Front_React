@@ -1,0 +1,61 @@
+.project-list-tile {
+    display: block;
+    //height: 7em;
+    height: 10rem;
+    width: 20rem;
+    flex-grow: 1;
+    background-color: #eeeeee;
+    border-radius: .5em;
+    margin: 1rem;
+}
+
+.project-list-tile ul {
+    font-size: 1em;
+    font-weight: 100;
+}
+
+.project-list-tile p {
+    margin: .7rem;
+}
+
+
+.project-list__title {
+    margin: 0 0 0 3vw;
+    @include phone-p {
+        display: none;
+    }
+}
+.project-list__btn__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    gap: 1rem;
+    margin-right: .5rem;
+}
+.project-list__main {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: 0 .7em .7em 0;
+    @include tablet-p_phone-l {
+        margin: 0;
+        border-radius:0;
+    }
+}
+
+.project-list__board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    height: calc(100vh - 228px);
+    @include tablet {
+        height: calc(100vh - 214px);
+    }
+    @include tablet-p_phone-l {
+        height: calc(100vh - 143px);
+    }
+    @include phone-p {
+        height: calc(100vh - 136px);
+    }
+}

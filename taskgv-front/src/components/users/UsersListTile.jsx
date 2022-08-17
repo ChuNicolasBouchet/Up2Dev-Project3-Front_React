@@ -2,8 +2,6 @@ import React, {useContext} from 'react'
 import {NavLink} from 'react-router-dom';
 import AuthContext from "../../context/AuthProvider";
 import UserController from "./UserController";
-// import {ReactComponent as DeleteIco} from '../../svg/delete.svg';
-// import {ReactComponent as EditIco} from '../../svg/edit.svg';
 import DeleteButton from "../buttons/DeleteButton";
 import EditButton from "../buttons/EditButton";
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import {useParams} from "react-router-dom";
+import {NavLink, useParams} from "react-router-dom";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from 'axios';
@@ -273,10 +273,11 @@ const UserEdit= () => {
                                 Le mot de passe et sa confirmation doivent êtres identiques.
                             </p>
                             </div>
-                                <div className="useredit__form__element useredit__form__button">
+                            <div className="useredit__form__element useredit__form__button">
                                     {/*<button disabled={!validEmail || !validPassword || !validMatch ? true : false}>Valider</button>*/}
-                                    <button>Valider</button>
-                                </div>
+                                <button>Valider</button>
+                            </div>
+                            <NavLink to={`/users`}><button className='cancel-btn'>Annuler</button> </NavLink>
                         </form>
                     </section>
                 )}

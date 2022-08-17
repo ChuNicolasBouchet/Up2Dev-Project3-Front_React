@@ -13,6 +13,9 @@ import UsersList from "./components/users/UsersList";
 import User from "./components/users/User";
 import UserEdit from "./components/users/UserEdit";
 import Empty from "./components/Empty";
+import ProjectsList from "./components/projects/ProjectsList";
+import Project from "./components/projects/Project";
+import ProjectEdit from "./components/projects/ProjectEdit";
 
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
                 <Route path ="/users" element={<UsersList />} />
                 <Route path ="/user/:id" element={<User />} />
                 <Route path ="/useredit/:id" element={<UserEdit />} />
+                <Route path ="/projects" element={<ProjectsList />} />
+                <Route path ="/projects/:id" element={<Project />} />
+                <Route path ="/projectedit/:id" element={<ProjectEdit />} />
               </Route>
             </Route>
             {/* catch all => 404 */}
